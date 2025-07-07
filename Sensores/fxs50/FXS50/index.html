@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>FX-S50 - Fox Dynamics</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FX-S50";
+        var mkdocs_page_input_path = "Sensores\\fxs50\\FXS50.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Fox Dynamics
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensores</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../IrKey/">IR-Key</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">FX-S50</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristicas-tecnicas">Características Técnicas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#modelo-3d">Modelo 3D</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comparacao-com-outros-sensores">Comparação com outros sensores</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pinagem">Pinagem</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuracao-do-sensor">Configuração do sensor</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#como-configurar-usando-o-modo-shell">Como configurar usando o modo Shell</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#diagrama-esquematimo">Diagrama Esquematimo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#conexao-usando-saida-digital-simples">Conexão usando Saida digital Simples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conexao-usando-fox-wire">Conexão usando Fox Wire</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exemplo-de-codigo-usando-a-saida-digital-simples">Exemplo de código usando a saida digital simples</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Placas</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../placa1/">Placa A</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../communication/">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FoxWire</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="../../../communication/FoxWire/index.md">Home</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../communication/FoxWire/outro.md">Outro Tópico</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Shell</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="../../../communication/Shell/index.md">Home</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../communication/Shell/comandos.md">Comandos</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../../communication/FoxWire">FoxWire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../../communication/Shell">Shell</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Fox Dynamics</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Sensores</li>
+      <li class="breadcrumb-item active">FX-S50</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sensor-fx-s50">Sensor FX-S50</h1>
+<p><em>Sensor digital de obstaculos com alcance ajustavel.</em></p>
+<p>Sensor digital de obstáculos compacto, rápido e configurável. Possui uma saída digital para detecção imediata, e um pino para configuração ou leitura via protocolo FoxWire, permitindo a conexão  simultânea de até 32 sensores em paralelo (compartilhando o mesmo fio).</p>
+<p>Usando o pino FX é possivel ler, e configurar o sensor. A comunicação com ele pose ser feita usando comandos de texto ou o protocolo foxwire.</p>
+<!--Além disso, o sensor possui um modo "Shell", que possibilita conectá-lo a um computador através de um conversor USB-Serial. Esse modo permite a leitura de dados e a configuração detalhada dos parâmetros.-->
+
+<p><img alt="Alt text" src="../frente.png" /></p>
+<iframe data-v-ad9fcaae=""
+  src="https://www.youtube.com/embed/7ljwJTxrwXw?rel=0&amp;cc_lang_pref=en&amp;cc_load_policy=1"
+  title="FXS50 demo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen=""
+  style="width: 100%; height: 400px;">
+</iframe>
+
+<p><strong>Datasheet:</strong> <a href="../Sensor_FXS50/Datasheet_FX_S50.pdf">Datasheet_FXS50</a></p>
+<h2 id="caracteristicas-tecnicas">Características Técnicas</h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de sensor</td>
+<td>Obstaculos digital ajustavel</td>
+</tr>
+<tr>
+<td>Faixa de medição</td>
+<td>0 a 50cm (*)</td>
+</tr>
+<tr>
+<td>Tensão de operação</td>
+<td>3,3 a 5V</td>
+</tr>
+<tr>
+<td>Corrente de operação</td>
+<td>12 a 16mA</td>
+</tr>
+<tr>
+<td>Interface de comunicação</td>
+<td>Saida digital e pino Fox Wire</td>
+</tr>
+<tr>
+<td>Dimensões</td>
+<td>11,4 x 12,4 x 16,2 mm</td>
+</tr>
+<tr>
+<td>Peso</td>
+<td>4,9 g</td>
+</tr>
+</tbody>
+</table>
+<p>(*) Medição na configuração padrão. Em testes, chegou a alcançar até 70cm na configuração mais sensivel. Os resultados podem variar em função da cor, inclinação e tamanho do objeto detectado. Ajuste a sensibilidade em função da aplicação.</p>
+<p><img alt="Alt text" src="../vistas_resumo_borda.png" /></p>
+<p><img alt="Alt text" src="../vistas_resumo_cor.png" /></p>
+<p><img alt="Alt text" src="../foto_vistas.png" /></p>
+<h3 id="modelo-3d">Modelo 3D</h3>
+<p><a href="./SensorMini_3dmodel.step">Modelo 3D STEP</a></p>
+<h2 id="comparacao-com-outros-sensores">Comparação com outros sensores</h2>
+<p><img alt="Alt text" src="../comparando.png" /></p>
+<h2 id="pinagem">Pinagem</h2>
+<ul>
+<li>Pino GND</li>
+<li>Pino Vcc (Alimentação de 3,3V a 5V)</li>
+<li>Pino S de saida digital ( HIGH detectado, LOW não detectado )</li>
+<li>Pino Fox Wire (Configuração e leitura)</li>
+</ul>
+<p><img alt="Pinagem" src="../diagrama_funcional.png" /></p>
+<h2 id="configuracao-do-sensor">Configuração do sensor</h2>
+<p>Este sensor é configuravel, a tabela abaixo apresenta os principais parâmetros.</p>
+<table>
+<thead>
+<tr>
+<th>Parametros</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endereço Fox Wire</td>
+<td>Endereço do dispositivo para o protocoolo Fox Wire</td>
+</tr>
+<tr>
+<td>Potência do Emissor</td>
+<td>Potência do emissor, quanto maior maior o alcance. Varia de 10 a 100</td>
+</tr>
+<tr>
+<td>Frequência do Emissor</td>
+<td>Frequência do emissor, pode ser util para ajustar o alcance ou melhorar o desempenho de sensores proximos (*). valor normalizado de 0 a 255</td>
+</tr>
+<tr>
+<td>Trig e Filter_len</td>
+<td>Ajuste de filtragem do sinal usando um integrador e um "schmitt trigger". Quanto maior a filtragem mais limpo o sinal, porém menor a frequencia de atualização. O usuario pode fazer o ajuste fino para determinar a melhor configuração</td>
+</tr>
+</tbody>
+</table>
+<p>(*) Na deteção a longa distância a luz emitida por dois sensore um ao lado do outro a luz emitida por cada um pode causar interferencia destrutiva, reduzindo o alcalce de cada um. Usar frequências um pouco diferentes pode ajudar nisso.</p>
+<h3 id="como-configurar-usando-o-modo-shell">Como configurar usando o modo Shell</h3>
+<p>O modo Shell é usado para se comunicar diretamente com o sensor usando comandos de texto. Esse modo só permite a comunicação com um unico sensor por vez (Para configurar varios sensores simultaneamente use Fox Wire).</p>
+<ol>
+<li>
+<p>Conecte o sensor ao computador usando um conversor USB-Serial ou um arduino (<a href="#FxSerial">Conexão usando Fox Wire com Conversor USB Serial</a>).</p>
+</li>
+<li>
+<p>Abra algum aplicativo de comunicação Serial, como Putty ou o próprio Serial Monitor do Arduino. Configure com baudrate de 115200. No Serial Monitor pode escolher qualquer placa desde que seja a COM correta, por simplicidade selecionei um Arduino.</p>
+</li>
+</ol>
+<p><img alt="Monitor" src="../shell_serial_monitor_1.png" /></p>
+<ol>
+<li>Digite "FOX-SHELL" para o sensor entrar no modo Shell. O sensor irá responder enviando "FOX-SHELL INIT!".  </li>
+</ol>
+<p><img alt="Monitor" src="../shell_serial_monitor_2.png" /></p>
+<ol>
+<li>Com o modo Shell iniciado você pode configurar o sensor ou realizar medições. Digite o comando "help" para exibir a lista de comandos disponiveis.</li>
+</ol>
+<p><img alt="Monitor" src="../shell_serial_monitor_3.png" /></p>
+<ol>
+<li>O comando "dump" exibe os valores de configuração do sensor.</li>
+</ol>
+<p><img alt="Monitor" src="../shell_serial_monitor_4.png" /></p>
+<!--  > [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+-->
+
+<blockquote>
+<p>[!WARNING]<br />
+Conecte apenas um sensor por conexão (para configurar varios simultaneamente use FoxWire)</p>
+<p>[!IMPORTANT]<br />
+Ao final envie o comando "save" para salvar as configurações, caso contrário, ao desligar as alterações são perdidas!</p>
+</blockquote>
+<h2 id="diagrama-esquematimo">Diagrama Esquematimo</h2>
+<h3 id="conexao-usando-saida-digital-simples">Conexão usando Saida digital Simples</h3>
+<p><img alt="conexão_dogital" src="../sch_digital.png" /></p>
+<h3 id="conexao-usando-fox-wire">Conexão usando Fox Wire</h3>
+<p>Repositório FoxWire: <a href="https://github.com/luisf18/FoxWire">https://github.com/luisf18/FoxWire</a> </p>
+<p><img alt="Alt text" src="../sch_fox_wire.png" /></p>
+<h3 id="FxSerial">Conexão usando Fox Wire com Conversor USB Serial</h3>
+
+<p><img alt="Alt text" src="../fx_serial.png" /></p>
+<h2 id="exemplo-de-codigo-usando-a-saida-digital-simples">Exemplo de código usando a saida digital simples</h2>
+<pre><code class="language-c++">// Fox Dynamics Team
+// Codigo simples usando a saida digital
+
+#define SENSOR_PIN 8
+
+void setup(){
+    Serial.begin(115200);
+    pinMode(SENSOR_PIN,INPUT);
+}
+
+void loop() {
+    Serial.print( &quot;Leitura do sensor: &quot; );
+    Serial.println( digitalRead(SENSOR_PIN) );
+    delay(300);
+}
+</code></pre>
+<hr />
+<p align="center">
+  <img src="../LogoFox.png" alt="Logo da Empresa" width="200px">
+</p>
+
+<!--- [Alt text](LogoFox.png) -->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../IrKey/" class="btn btn-neutral float-left" title="IR-Key"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../placa1/" class="btn btn-neutral float-right" title="Placa A">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../IrKey/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../placa1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
