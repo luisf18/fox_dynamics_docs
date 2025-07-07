@@ -1,0 +1,21 @@
+/* Altera a cor do cabeçalho e links */
+.wy-side-nav-search,
+.wy-nav-top {
+    background: #fa5407 !important; /* Laranja */
+}
+
+/* Links ativos ou destacados 
+.wy-menu-vertical li.current > a {
+    background: #ff4d00 !important;
+}
+*/
+
+h1 {
+    color: #ff5e19d3;
+}
+
+/* Cor dos títulos
+h1, h2, h3, h4 {
+    color: #ff5e19d3;
+}
+*/

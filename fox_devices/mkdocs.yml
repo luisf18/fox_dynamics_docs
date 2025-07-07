@@ -1,0 +1,36 @@
+site_name: Fox Dynamics
+theme:
+  name: readthedocs
+
+extra_css:
+  - extra.css
+
+#plugins:
+#  - i18n:
+#      default_language: pt
+#      languages:
+#        pt: Português
+#        en: English
+
+nav:
+  - Home: index.md
+  - Sensores:
+      - IR-Key: Sensores/IrKey.md
+      - FX-S50: Sensores/fxs50/FXS50.md
+  - Placas:
+      - Placa A: placa1.md
+  - FoxWire e Shell:
+      - Home: communication/index.md
+      - FoxWire:
+          - Home: communication/FoxWire/index.md
+          - Outro Tópico: communication/FoxWire/outro.md
+      - Shell:
+          - Home: communication/Shell/index.md
+          - Comandos: communication/Shell/comandos.md
+      - FoxWire: communication/FoxWire
+      - Shell: communication/Shell
+
+#extra:
+#  social:
+    #- icon: fontawesome/brands/github
+     # link: https://github.com/usuario/repositorio

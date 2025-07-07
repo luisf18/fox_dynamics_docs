@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>IR-Key - Fox Dynamics</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IR-Key";
+        var mkdocs_page_input_path = "Sensores\\IrKey.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Fox Dynamics
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensores</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">IR-Key</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pinout">Pinout</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utilizacao-modo-ir-start">Utilização Modo IR-Start</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#leitura-dos-comandos-ir-via-pino-fx">Leitura dos comandos IR via pino FX</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modos-de-operacao">Modos de operação</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modo-configuracao">Modo Configuração</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modo-servo">Modo Servo</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#registradores-de-configuracao">Registradores de Configuração</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conexao-com-o-computador">Conexão com o computador</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#circuito">Circuito</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ferramentas-para-configurar">Ferramentas para configurar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuracao-no-foxwire-webtool">Configuração no Foxwire WebTool</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fxs50/FXS50/">FX-S50</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Placas</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../placa1/">Placa A</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >FoxWire</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="../../communication/FoxWire/index.md">Home</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../communication/FoxWire/outro.md">Outro Tópico</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Shell</a>
+    <ul>
+                <li class="toctree-l2"><a class="" href="../../communication/Shell/index.md">Home</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../communication/Shell/comandos.md">Comandos</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../communication/FoxWire">FoxWire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../communication/Shell">Shell</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Fox Dynamics</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Sensores</li>
+      <li class="breadcrumb-item active">IR-Key</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="irkey">IrKey</h1>
+<p><em>Firmware V1.0</em></p>
+<p><img alt="Chave IR" src="../../images/IrKey_sides.png" /></p>
+<p>Módulo Leitor IR 3 em 1.  </p>
+<ul>
+<li><code>IR-Start</code> Acionamento de robôs de sumô ou Seguidor de Linha, via Controle remoto ou botão com 5 segundos.</li>
+<li>Receptor IR para 2 servos</li>
+<li>Leitor IR-Serial</li>
+</ul>
+<p>Protocolos disponiveis no momento:  </p>
+<ul>
+<li>SONY</li>
+<li>SAMSUNG</li>
+</ul>
+<h2 id="pinout">Pinout</h2>
+<p><img alt="botões start" src="../../images/IrKey_pinout.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Pino</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vcc</strong></td>
+<td>Alimentação 3V3 a 5V</td>
+</tr>
+<tr>
+<td><strong>GND</strong></td>
+<td>Alimentação 0V</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>saida digital 0 ou 1</td>
+</tr>
+<tr>
+<td><strong>FX</strong></td>
+<td>saida USART Halfduplex (Leitura/Escrita) *</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Obs:</strong> O pino <strong>FX</strong> só trabalha com 3V3. Não é tolerante a 5V.</p>
+<h2 id="utilizacao-modo-ir-start">Utilização Modo IR-Start</h2>
+<p>Ao ligar, o modulo inicia no modo <code>IR-Start</code>, recebendo comando do controle do juiz seguindo a sequência de inicialização. Também é possivel acionar usando o botão com cliques. </p>
+<p><img alt="Chave IR" src="../../images/IrKey_fluxo_start.png" /></p>
+<table>
+<thead>
+<tr>
+<th>comando</th>
+<th>botão</th>
+<th>ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prepare</td>
+<td>1</td>
+<td>prepara o robô o LED de status pisca Azul</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>2</td>
+<td>A saida é acionada, acendendo o led da saida e o LED de status fica verde continuamente</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>3</td>
+<td>A saida é desacionada, apagando o led da saida e o LED de status fica vermelho continuamente</td>
+</tr>
+<tr>
+<td>Start 5S</td>
+<td>-</td>
+<td>Conta 5 segundos e depois inicia, mudando a cor de amarelo para verde aos poucos</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="botões start" src="../../images/IrKey_controle_start.png" /></p>
+<h3 id="leitura-dos-comandos-ir-via-pino-fx">Leitura dos comandos IR via pino FX</h3>
+<p>Cada comando recebido é enviado via USART no pino <strong>FX</strong>. Essa funcionalidade pode ser desativada via registrador <code>CTRL</code> (mais detalhes em <strong>configuração</strong>). </p>
+<p>As mensagens iniciam com o caracter "&gt;" em seguida os dados são enviadas em formato CSV separado por virgula e com caracteres de fim de "\n\r".</p>
+<p>Formato:</p>
+<ul>
+<li>Header: "&gt;"</li>
+<li>Protocolo: "SONY" ou "SAMSUNG"</li>
+<li>Comando (Hexadecimal)</li>
+<li>Endereço (Hexadecimal)</li>
+<li>Codigo completo (Hexadecimal)</li>
+</ul>
+<p><code>"&gt;[Protocolo],[Comando],[Endereço],[Código]"</code></p>
+<p><em>Exemplo: Comando SONY, Botão 1</em></p>
+<p><code>"&gt;SONY,0,7,70"</code></p>
+<h2 id="modos-de-operacao">Modos de operação</h2>
+<p>Existe 3 modos de operação: <code>IR-Start</code> (Default), <code>Configuração</code> e <code>Servo</code>. No modo <a href="#utilização-modo-ir-start"><code>IR-Start</code></a> ele faz a sequancia de inicialização. O modo <code>Configração</code> permite alterar configurações como cor e brilho de cada comando. O modo <code>Servo</code> serve para testar servos ou para controlar escs e robôs usando um controle remoto.</p>
+<p>A alteração de um modo para outro é feita usando o botão. A imagem a seguir ilustra a sequancia de transição entre os modos.</p>
+<ul>
+<li><code>Configuração</code>: pressione o botão por cerca de 1,5s até o led começar a piscar rapidamente na cor roxa. Para salvar, pressione e segure o botão por cerca de 1,5s até o led começar a piscar rapidamente na cor roxa e depois ficar Roxo durante alguns milisegundos enquanto salva, ao final ele reinicia a chave. Para sair sem salvar basta dar um clique curto.</li>
+<li><code>Servo</code>: pressione o botão por cerca de 5s até o led acender na cor azul esverdeada. Para retornar a <code>IR-Start</code> (Modo Default) basta dar um clique curto.</li>
+</ul>
+<p><img alt="Chave IR" src="../../images/IrKey_fluxo_modos.png" /></p>
+<h2 id="modo-configuracao">Modo <code>Configuração</code></h2>
+<p>No controle remoto clique no botão que deseja alterar a cor, por exemplo botão 1 (<code>prepare</code>). O LED ficará piscando na cor correspondente. Opções:</p>
+<ul>
+<li><strong>Botão direito e esquerdo:</strong> muda a cor, aumentando ou diminuindo o valor de HUE.</li>
+<li><strong>Botão pra cima e baixo:</strong> reduz ou aumenta o brilho.</li>
+<li><strong>Botão centro (ok):</strong> retorna a respectiva cor padrão.</li>
+</ul>
+<p><em>Ao final salve a configuração segurando o botão por cerca de 1.5s.</em></p>
+<p><img alt="botões start" src="../../images/IrKey_controle_config.png" /></p>
+<h2 id="modo-servo">Modo <code>Servo</code></h2>
+<p>Nesse modo cada botão corresponde a um conjunto de valores do PWM para S e FX.</p>
+<table>
+<thead>
+<tr>
+<th>Botão</th>
+<th>PWM S</th>
+<th>PWM FX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1200</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1400</td>
+<td>1400</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1500</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1700</td>
+<td>1700</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2000</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>centro</td>
+<td>1500</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>Frente</td>
+<td>2000*</td>
+<td>2000*</td>
+</tr>
+<tr>
+<td>Atras</td>
+<td>1000*</td>
+<td>1000*</td>
+</tr>
+<tr>
+<td>Direita</td>
+<td>2000*</td>
+<td>1000*</td>
+</tr>
+<tr>
+<td>Esquerda</td>
+<td>2000*</td>
+<td>1000*</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(*):</strong> Quando o botão é solto ele retorna para S=1500 e FX=1500.</p>
+<p><img alt="botões start" src="../../images/IrKey_controle_servo.png" /></p>
+<h2 id="registradores-de-configuracao">Registradores de Configuração</h2>
+<p>Este dispositivo possui registradores que armazenam valores que determinam as configurações, como: cor de cada ação e protocolos aceitos. A tabela abaixo descreve os registradores:</p>
+<table>
+<thead>
+<tr>
+<th>Registrador</th>
+<th>Addr</th>
+<th>bytes</th>
+<th>Informações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addr</td>
+<td>0</td>
+<td>1</td>
+<td>Endereço do dispositivo</td>
+</tr>
+<tr>
+<td>CTRL</td>
+<td>2</td>
+<td>1</td>
+<td>Registrador de Controle</td>
+</tr>
+<tr>
+<td>Protocolo start</td>
+<td>3</td>
+<td>1</td>
+<td>seleciona os protocolos para <code>IR-start</code></td>
+</tr>
+<tr>
+<td>Btn_mode</td>
+<td>4</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>Cor Preparar</td>
+<td>5</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>Cor On</td>
+<td>9</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>Cor Stop</td>
+<td>13</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>Protocolo servo</td>
+<td>17</td>
+<td>1</td>
+<td>seleciona os protocolos IR para <code>SERVO</code></td>
+</tr>
+<tr>
+<td>Cor servo</td>
+<td>18</td>
+<td>4</td>
+<td>Cor no modo servo</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>47</td>
+<td>16</td>
+<td>Nome do dispositivo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conexao-com-o-computador">Conexão com o computador</h2>
+<p>Utilize uma placa Fox Link, ou monte uma com  Arduino UNO ou Nano, fazendo upload nele do codigo abaixo.</p>
+<pre><code class="language-c++">// Fox Dynamics
+// FoxLink bitwise ASM V0.2
+#include &lt;avr/io.h&gt;
+
+int main() {
+  DDRD = (1 &lt;&lt; PD1);
+  PORTD = (1 &lt;&lt; PD0);
+  while (1) {
+      asm volatile (
+          &quot;in r0, %[pin]&quot; &quot;\n\t&quot;
+          &quot;bst r0, 0&quot; &quot;\n\t&quot;
+          &quot;bld r0, 1&quot; &quot;\n\t&quot;
+          &quot;out %[port], r0&quot; &quot;\n\t&quot;
+          :
+          : [pin] &quot;I&quot; (_SFR_IO_ADDR(PIND)),
+            [port] &quot;I&quot; (_SFR_IO_ADDR(PORTD))
+          : &quot;r0&quot;
+      );
+  }
+}
+</code></pre>
+<h3 id="circuito">Circuito</h3>
+<p><img alt="circuito com fox-link" src="../../images/IrKey_foxlink.png" /></p>
+<h3 id="ferramentas-para-configurar">Ferramentas para configurar</h3>
+<p>Atualmente existe as seguintes opções:</p>
+<ul>
+<li>Arduino IDE com Serial monitor ou outro. Usando comandos de texto.</li>
+<li><code>foxwire cli</code> Comandos via foxwire usando cli python (<a href="https://pypi.org/project/foxwire/">instale usando pip</a>).</li>
+<li><code>foxwire webtool</code> configuração de forma gráfica e simples. <em>Mais recomendado!</em></li>
+</ul>
+<h2 id="configuracao-no-foxwire-webtool">Configuração no Foxwire WebTool</h2>
+<p><a href="https://luisf18.github.io/FoxLink_web_tool/">FoxLink Webtool</a></p>
+<ol>
+<li>Clique em conectar e escolha a porta COM</li>
+<li>Clique em scan, ele irá scanear os dispositivos conectados</li>
+<li>Irá aparecer um card como o da imagem abaixo onde é possivel visualizar e alterar as configureções.</li>
+</ol>
+<p><img alt="webtool" src="../../images/IrKey_webtool.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fxs50/FXS50/" class="btn btn-neutral float-right" title="FX-S50">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../fxs50/FXS50/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
