@@ -15,20 +15,14 @@ extra_css:
 nav:
   - Home: index.md
   - Sensores:
-      - IR-Key: Sensores/IrKey.md
+      - IR-Key: Sensores/IrKey/IrKey.md
       - FX-S50: Sensores/fxs50/FXS50.md
   - Placas:
-      - Placa A: placa1.md
+      - FoxMini-ESP32: Placas/FoxMini_ESP32/FoxMini.md
   - FoxWire e Shell:
       - Home: communication/index.md
-      - FoxWire:
-          - Home: communication/FoxWire/index.md
-          - Outro Tópico: communication/FoxWire/outro.md
-      - Shell:
-          - Home: communication/Shell/index.md
-          - Comandos: communication/Shell/comandos.md
-      - FoxWire: communication/FoxWire
-      - Shell: communication/Shell
+      - FoxWire: communication/foxwire/foxwire.md
+      - Shell: communication/Shell/shell.md
 
 #extra:
 #  social:

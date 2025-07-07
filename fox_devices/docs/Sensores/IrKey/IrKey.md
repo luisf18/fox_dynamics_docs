@@ -2,7 +2,7 @@
 
 *Firmware V1.0*
 
-![Chave IR](../images/IrKey_sides.png)
+![Chave IR](sides.png)
 
 Módulo Leitor IR 3 em 1.  
 
@@ -17,7 +17,7 @@ Protocolos disponiveis no momento:
 
 ## Pinout
 
-![botões start](../images/IrKey_pinout.png)
+![botões start](pinout.png)
 
 | Pino  | Descrição  |
 |-------|------------|
@@ -32,7 +32,7 @@ Protocolos disponiveis no momento:
 
 Ao ligar, o modulo inicia no modo `IR-Start`, recebendo comando do controle do juiz seguindo a sequência de inicialização. Também é possivel acionar usando o botão com cliques. 
 
-![Chave IR](../images/IrKey_fluxo_start.png)
+![Chave IR](fluxo_start.png)
 
 | comando | botão |  ação |
 |---------|-------|-------|
@@ -41,7 +41,7 @@ Ao ligar, o modulo inicia no modo `IR-Start`, recebendo comando do controle do j
 | Stop | 3|  A saida é desacionada, apagando o led da saida e o LED de status fica vermelho continuamente |  
 | Start 5S | - |  Conta 5 segundos e depois inicia, mudando a cor de amarelo para verde aos poucos |  
 
-![botões start](../images/IrKey_controle_start.png)
+![botões start](controle_start.png)
 
 ### Leitura dos comandos IR via pino FX
 
@@ -72,7 +72,7 @@ A alteração de um modo para outro é feita usando o botão. A imagem a seguir 
 * `Configuração`: pressione o botão por cerca de 1,5s até o led começar a piscar rapidamente na cor roxa. Para salvar, pressione e segure o botão por cerca de 1,5s até o led começar a piscar rapidamente na cor roxa e depois ficar Roxo durante alguns milisegundos enquanto salva, ao final ele reinicia a chave. Para sair sem salvar basta dar um clique curto.
 * `Servo`: pressione o botão por cerca de 5s até o led acender na cor azul esverdeada. Para retornar a `IR-Start` (Modo Default) basta dar um clique curto.
 
-![Chave IR](../images/IrKey_fluxo_modos.png)
+![Chave IR](fluxo_modos.png)
 
 ## Modo `Configuração`
 
@@ -84,7 +84,7 @@ No controle remoto clique no botão que deseja alterar a cor, por exemplo botão
 
 *Ao final salve a configuração segurando o botão por cerca de 1.5s.*
 
-![botões start](../images/IrKey_controle_config.png)
+![botões start](controle_config.png)
 
 ## Modo `Servo`
 
@@ -106,7 +106,7 @@ Nesse modo cada botão corresponde a um conjunto de valores do PWM para S e FX.
 
 **(*):** Quando o botão é solto ele retorna para S=1500 e FX=1500.
 
-![botões start](../images/IrKey_controle_servo.png)
+![botões start](controle_servo.png)
 
 ## Registradores de Configuração
 
@@ -154,7 +154,7 @@ int main() {
 
 ### Circuito
 
-![circuito com fox-link](../images/IrKey_foxlink.png)
+![circuito com fox-link](foxlink.png)
 
 ### Ferramentas para configurar
 
@@ -172,4 +172,4 @@ Atualmente existe as seguintes opções:
 2. Clique em scan, ele irá scanear os dispositivos conectados
 2. Irá aparecer um card como o da imagem abaixo onde é possivel visualizar e alterar as configureções.
 
-![webtool](../images/IrKey_webtool.png)
+![webtool](webtool.png)

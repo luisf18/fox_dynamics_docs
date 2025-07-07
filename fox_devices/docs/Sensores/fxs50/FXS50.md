@@ -150,7 +150,7 @@ void loop() {
 ---
 
 <p align="center">
-  <img src="../LogoFox.png" alt="Logo da Empresa" width="200px">
+  <img src="/../LogoFox.png" alt="Logo" width="200px">
 </p>
 
 <!--- [Alt text](LogoFox.png) -->
