@@ -125,7 +125,7 @@ Este dispositivo possui registradores que armazenam valores que determinam as co
 | Cor servo | 18| 4 | Cor no modo servo |
 | Nome | 47| 16 | Nome do dispositivo |
 
-### Lista de comandos do Shell
+## Lista de comandos do Shell
 
 * `help` lista os comandos disponiveis
 * `exit` encerra o shell

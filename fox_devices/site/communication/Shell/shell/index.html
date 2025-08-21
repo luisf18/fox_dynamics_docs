@@ -70,7 +70,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#comandos-comuns">Comandos comuns</a>
+    <li class="toctree-l2"><a class="reference internal" href="#comandos-comuns-do-shell">Comandos comuns do Shell</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#exemplo-1-iniciando-shell-em-uma-rede-com-1-dispositivo">Exemplo 1: Iniciando Shell em uma rede com 1 dispositivo</a>
     </li>
@@ -104,18 +104,18 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="shell">Shell</h1>
-<p>Os comandos shell utilizam comandos de texto legiveis por humanos que podem ser facilmente digitaldos. A lista de comandos depende de cada dispositivo. No entanto, existem comandos comuns a todos.</p>
+<p>Os comandos shell utilizam comandos de texto legiveis por humanos que podem ser facilmente digitados. A lista de comandos depende de cada dispositivo. No entanto, existem comandos comuns a todos.</p>
 <h2 id="inicializacao-do-shell">Inicialização do Shell</h2>
 <p>Digite <code>FOX-SHELL</code> para iniciar o shell. Em seguida digite os comandos que desejar.</p>
 <h3 id="inicializacao-condicinal">Inicialização condicinal</h3>
-<p>Como o shell é executado na mesma linha que podem possuir diversos dispositivos ligados em paralelo, é preciso especificar com qual dispositivo deseja se comunicar. O comando <code>FOX-SHELL</code> inicia todos na linha, que só pode ser feito quando só existe um dispositivo. Para iniciar com varios use <code>FOX-SHELL-&lt;ADDR&gt;</code>, para iniciar o respectivo endereço.</p>
+<p>Como o shell é executado em um linha que podem possuir diversos dispositivos ligados em paralelo, é preciso especificar com qual dispositivo deseja se comunicar. O comando <code>FOX-SHELL</code> inicia todos na linha, se houver mais de um dispositivo isso irá causar erros. A <code>inicialização condiciona</code> é um recurso que ajuda a distinguir o dispositivo destino. A seguir os comando de inicialização e suas diferenças.</p>
 <ul>
-<li><code>FOX-SHELL</code> inicia todos os dispositivos em modo shell (só pode ser feito quando só tem um dispositivo)</li>
+<li><code>FOX-SHELL</code> inicia todos os dispositivos em modo shell (só pode ser feito quando só tem um dispositivo!)</li>
 <li><code>FOX-SHELL-&lt;ADDR&gt;</code>  inicia o dispositivo com o endereço correspondente</li>
-<li><code>FOX-SHELL-IF</code> inicia apenas o dispositivo que atende a uma condição especifica. por exemplo, o sensor FXS50 a condição é ter um obstaculo na frente, portanto para acionar apenas um dispositivo com endereço indefinido coloque um obstaculo na frente de um unico sensor e execute este comando.</li>
-<li><code>FOX-SHELL-UNLOCK</code> Os dispositivos na linha que não são iniciados entram ficam travados, para não confundir os comandos. se posteriormente quiser encerrar e começar a comunicação com outro dispositivo é preciso sair e executar esse comando.</li>
+<li><code>FOX-SHELL-IF</code> inicia apenas o dispositivo que atende a uma condição especifica. Por exemplo, no sensor FXS50, a condição é ter um obstaculo na frente. Portanto, para acionar apenas um dispositivo com endereço indefinido coloque um obstaculo na frente de um unico sensor e execute este comando.</li>
+<li><code>FOX-SHELL-UNLOCK</code> Os dispositivos na linha que não são iniciados entram em modo de espera. Para iniciar comunicação posteriormente com outro dispositivo é preciso sair e executar esse comando.</li>
 </ul>
-<h2 id="comandos-comuns">Comandos comuns</h2>
+<h2 id="comandos-comuns-do-shell">Comandos comuns do Shell</h2>
 <ul>
 <li><code>help</code> lista os comandos disponiveis</li>
 <li><code>exit</code> encerra o shell</li>

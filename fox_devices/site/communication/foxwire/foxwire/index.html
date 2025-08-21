@@ -102,9 +102,9 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="foxwire">FoxWire</h1>
-<p>O protocolo FoxWire foi projetado prover comunicação rápida e confiavel com multiplos dispositivos através de um unico fio. Ele pode ser implementado em Hardware ou em Software em praticamente qualquer microcontrolador.</p>
-<p>Ele usa o protocolo UART 8N1 com baudrate de 115200, enquanto um dispositivo envia bytes os outros escutam. O protocolo funciona com o Host (Mestre) iniciando a comunicação, ele envia um pacote de um ou mais bytes que identifica o dispositivo e o modo de conexão.</p>
-<p>Exitem 4 tipos de pacotes de inicialização, que indicam a quantidade de bits sequintes e o objetivo da comunicação.</p>
+<p>O protocolo FoxWire foi projetado para prover comunicação rápida e confiavel com multiplos dispositivos através de um unico fio. Ele pode ser implementado em Hardware ou em Software em praticamente qualquer microcontrolador.</p>
+<p>Ele usa o protocolo UART 8N1 com baudrate de 115200, enquanto um dispositivo envia bytes os outros escutam. O protocolo funciona com um Host (Mestre) iniciando a comunicação, ele envia um pacote de um ou mais bytes que identifica o dispositivo e o modo de conexão.</p>
+<p>Exitem 4 tipos de pacotes de inicialização, que indicam a quantidade de bytes sequintes e o objetivo da comunicação.</p>
 <ul>
 <li><strong>Pacote Status:</strong> Pacote de apenas 1 byte, que aguarda que o dispositivo destino responda com 1 byte de confirmação</li>
 <li><strong>Pacote Read:</strong> Pacote de 2 bytes, que aguarda que o dispositivo destino responda com 1 byte de resposta</li>

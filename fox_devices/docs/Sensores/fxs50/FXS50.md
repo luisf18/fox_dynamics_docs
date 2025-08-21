@@ -106,7 +106,7 @@ O modo Shell é usado para se comunicar diretamente com o sensor usando comandos
 > [!IMPORTANT]  
 > Ao final envie o comando "save" para salvar as configurações, caso contrário, ao desligar as alterações são perdidas!
 
-### Lista de comandos do Shell
+## Lista de comandos do Shell
 
 * `help` lista os comandos disponiveis
 * `exit` encerra o shell
@@ -173,7 +173,7 @@ void loop() {
 ---
 
 <p align="center">
-  <img src="/../LogoFox.png" alt="Logo" width="200px">
+  <img src=".../LogoFox.png" alt="Logo" width="200px">
 </p>
 
 <!--- [Alt text](LogoFox.png) -->
