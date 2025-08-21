@@ -1,12 +1,13 @@
 # Sensor FX-S50
 
-*Sensor digital de obstaculos com alcance ajustavel.*
+*Sensor digital de obstáculos com alcance ajustavel.*
 
-Sensor digital de obstáculos compacto, rápido e configurável. Possui uma saída digital para detecção imediata, e um pino para configuração ou leitura via protocolo FoxWire, permitindo a conexão  simultânea de até 32 sensores em paralelo (compartilhando o mesmo fio).
-
-Usando o pino FX é possivel ler, e configurar o sensor. A comunicação com ele pose ser feita usando comandos de texto ou o protocolo foxwire.
+Sensor digital de obstáculos compacto, rápido e configurável. Possui duas formas de leitura: saída digital ou FoxWire (FX). Usando FoxWire é possivel conectar até 32 sensores em um unico fio, reduzindo a complexidade de conexões. A saida dital é 1 quando detecta um obstaculo e 0 quando não detecta.
 
 <!--Além disso, o sensor possui um modo "Shell", que possibilita conectá-lo a um computador através de um conversor USB-Serial. Esse modo permite a leitura de dados e a configuração detalhada dos parâmetros.-->
+
+**Datasheet:** [Datasheet_FXS50](../Sensor_FXS50/Datasheet_FX_S50.pdf)  
+**Modelo 3D:** [Modelo 3D STEP](./SensorMini_3dmodel.step)
 
 ![Alt text](frente.png)
 
@@ -19,9 +20,7 @@ Usando o pino FX é possivel ler, e configurar o sensor. A comunicação com ele
   allowfullscreen=""
   style="width: 100%; height: 400px;">
 </iframe>
-
-**Datasheet:** [Datasheet_FXS50](../Sensor_FXS50/Datasheet_FX_S50.pdf)
-
+  
 ## Características Técnicas
 
 | Característica         | Valor                 |
@@ -36,17 +35,13 @@ Usando o pino FX é possivel ler, e configurar o sensor. A comunicação com ele
 
 (*) Medição na configuração padrão. Em testes, chegou a alcançar até 70cm na configuração mais sensivel. Os resultados podem variar em função da cor, inclinação e tamanho do objeto detectado. Ajuste a sensibilidade em função da aplicação.
 
-![Alt text](vistas_resumo_borda.png)
+![Alt text](desenho.png)
 
 ![Alt text](vistas_resumo_cor.png)
 
-![Alt text](foto_vistas.png)
+<!--![Alt text](foto_vistas.png)-->
 
-### Modelo 3D
-
-[Modelo 3D STEP](./SensorMini_3dmodel.step)
-
-## Comparação com outros sensores
+### Comparação com outros sensores
 
 ![Alt text](comparando.png)
 
@@ -110,6 +105,34 @@ O modo Shell é usado para se comunicar diretamente com o sensor usando comandos
 
 > [!IMPORTANT]  
 > Ao final envie o comando "save" para salvar as configurações, caso contrário, ao desligar as alterações são perdidas!
+
+### Lista de comandos do Shell
+
+* `help` lista os comandos disponiveis
+* `exit` encerra o shell
+* `register` lê ou escreve um registrador de 8bits
+* `dump` lista as principais configurações
+* `vcc` mede a tensão aplicada no microcontrolador
+* `reset` reinicia o sensor
+* `save` salva as alterações realizadas
+* `restore` restaura as configurações de fábrica
+* `restore` restaura as configurações de fábrica sem alterar o endereço
+* `read` lê o sensor
+* `dump` lista as principais configurações
+* `address` lê ou altera o endereço do sensor
+* `e_freq` lê ou altera a frequência do emissor (de 0 a 255)
+* `e_brightness` lê ou altera o brilho do emissor (de 0 a 100)
+* `f_size` lê ou altera o comprimento do filtro (de 1 a 255)
+* `f_trigger` lê ou altera o limiar de acionamento do filtro (de 1 a `f_size`)
+* `aq_freq` lê ou altera a frequencia de aquisição (de 1 a 127). Recomendado 14khz. (0 significa o mais rapido possivel, mas o sinal pode ficar instavel).
+* `name` lê ou altera o nome do dispositivo (até 16 caracteres)
+* `uuid` lê o id único do sensor
+* `scan` scaneia com varios brilhos para definir um grau de distância. parâmetro: steps, start_value, step_size, measurements, threshold [%], frequency.
+* `set_digital` coloca o sensor em modo de leitura digital
+* `set_analog` coloca o sensor em modo de leitura analógica
+* `GPIO0` Controla as configurações do GPIO0
+* `GPIO1` Controla as configurações do GPIO1
+
 
 ## Diagrama Esquematimo
 

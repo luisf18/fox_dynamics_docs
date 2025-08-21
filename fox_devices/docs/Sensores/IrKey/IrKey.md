@@ -125,6 +125,31 @@ Este dispositivo possui registradores que armazenam valores que determinam as co
 | Cor servo | 18| 4 | Cor no modo servo |
 | Nome | 47| 16 | Nome do dispositivo |
 
+### Lista de comandos do Shell
+
+* `help` lista os comandos disponiveis
+* `exit` encerra o shell
+* `register` lê ou escreve um registrador de 8bits
+* `dump` lista as principais configurações
+* `vcc` mede a tensão aplicada no microcontrolador
+* `reset` reinicia o sensor
+* `save` salva as alterações realizadas
+* `restore` restaura as configurações de fábrica
+* `restore` restaura as configurações de fábrica sem alterar o endereço
+* `read` lê o sensor
+* `samsung_start_enable` habilita a recepção de comandos SAMSUNG
+* `samsung_start_disable` desabilita a recepção de comandos SAMSUNG
+* `servo_enable` habilita o modo servo
+* `servo_disable` desabilita o modo servo  
+
+Cores: [ RED=0 (0:255) ][ GREEN=0 (0:255) ][ BLUE=0 (0:255) ]
+
+* color_stop
+* color_start
+* color_prepare
+* color_serv
+
+
 ## Conexão com o computador
 
 Utilize uma placa Fox Link, ou monte uma com  Arduino UNO ou Nano, fazendo upload nele do codigo abaixo.

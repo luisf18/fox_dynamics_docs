@@ -2,15 +2,15 @@
 
 ## Sensores
 
-| ![.](images/fxs50.png) | ![.](images/IrKey.png) |![.](images/fx200.png) |
+| [![.](images/fxs50.png)](Sensores/fxs50/FXS50.md) | [![.](images/IrKey.png)](Sensores/IrKey/IrKey.md) |![.](images/fx200.png) |
 |:---:|:--------:|:--------:|
-| [FX-S50](Sensores/fxs50/FXS50.md) | [IR-Key](Sensores/IrKey.md) |FX-S200 |
+| [FX-S50](Sensores/fxs50/FXS50.md) | [IR-Key](Sensores/IrKey/IrKey.md) |FX-S200 |
 
 ## Placas
 
-|   ![.](images/FoxMini.png) | ![.](images/BBRX-FS.png) |
+|   [![.](images/FoxMini.png)](Placas/FoxMini_ESP32/FoxMini.md) | ![.](images/BBRX-FS.png) |
 |:----:|:--------:|
-|  FoxMini  |  BBRX-FS  |
+|  [FoxMini-ESP32](Placas/FoxMini_ESP32/FoxMini.md)  |  BBRX-FS  |
 
 ## ESCs
 
