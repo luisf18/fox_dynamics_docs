@@ -17,6 +17,7 @@ nav:
   - Sensores:
       - IR-Key: Sensores/IrKey/IrKey.md
       - FX-S50: Sensores/fxs50/FXS50.md
+      - FX-S200: Sensores/fxs200/FXS200.md
   - Placas:
       - FoxMini-ESP32: Placas/FoxMini_ESP32/FoxMini.md
   - FoxWire e Shell:

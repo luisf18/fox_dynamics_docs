@@ -4,7 +4,7 @@
 
 | [![.](images/fxs50.png)](Sensores/fxs50/FXS50.md) | [![.](images/IrKey.png)](Sensores/IrKey/IrKey.md) |![.](images/fx200.png) |
 |:---:|:--------:|:--------:|
-| [FX-S50](Sensores/fxs50/FXS50.md) | [IR-Key](Sensores/IrKey/IrKey.md) |FX-S200 |
+| [FX-S50](Sensores/fxs50/FXS50.md) | [IR-Key](Sensores/IrKey/IrKey.md) | [FX-S200](Sensores/fxs200/fxs200.md) |
 
 ## Placas
 
