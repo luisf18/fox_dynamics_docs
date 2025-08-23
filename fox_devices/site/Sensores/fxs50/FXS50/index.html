@@ -58,13 +58,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#pinagem">Pinagem</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lista-de-comandos-do-shell-fx-s50-firmware-v14">Lista de comandos do Shell (FX-S50 Firmware V1.4)</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#configuracao-do-sensor">Configuração do sensor</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#como-configurar-usando-o-modo-shell">Como configurar usando o modo Shell</a>
     </li>
         </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lista-de-comandos-do-shell">Lista de comandos do Shell</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#diagrama-esquematimo">Diagrama Esquematimo</a>
         <ul>
@@ -191,6 +191,33 @@
 <li>Pino Fox Wire (Configuração e leitura)</li>
 </ul>
 <p><img alt="Pinagem" src="../diagrama_funcional.png" /></p>
+<h2 id="lista-de-comandos-do-shell-fx-s50-firmware-v14">Lista de comandos do Shell (FX-S50 Firmware V1.4)</h2>
+<ul>
+<li><code>help</code> lista os comandos disponiveis</li>
+<li><code>exit</code> encerra o shell</li>
+<li><code>register</code> lê ou escreve um registrador de 8bits</li>
+<li><code>dump</code> lista as principais configurações</li>
+<li><code>vcc</code> mede a tensão aplicada no microcontrolador</li>
+<li><code>reset</code> reinicia o sensor</li>
+<li><code>save</code> salva as alterações realizadas</li>
+<li><code>restore</code> restaura as configurações de fábrica</li>
+<li><code>restore</code> restaura as configurações de fábrica sem alterar o endereço</li>
+<li><code>read</code> lê o sensor</li>
+<li><code>dump</code> lista as principais configurações</li>
+<li><code>address</code> lê ou altera o endereço do sensor</li>
+<li><code>e_freq</code> lê ou altera a frequência do emissor (de 0 a 255)</li>
+<li><code>e_brightness</code> lê ou altera o brilho do emissor (de 0 a 100)</li>
+<li><code>f_size</code> lê ou altera o comprimento do filtro (de 1 a 255)</li>
+<li><code>f_trigger</code> lê ou altera o limiar de acionamento do filtro (de 1 a <code>f_size</code>)</li>
+<li><code>aq_freq</code> lê ou altera a frequencia de aquisição (de 1 a 127). Recomendado 14khz. (0 significa o mais rapido possivel, mas o sinal pode ficar instavel).</li>
+<li><code>name</code> lê ou altera o nome do dispositivo (até 16 caracteres)</li>
+<li><code>uuid</code> lê o id único do sensor</li>
+<li><code>scan</code> scaneia com varios brilhos para definir um grau de distância. parâmetro: steps, start_value, step_size, measurements, threshold [%], frequency.</li>
+<li><code>set_digital</code> coloca o sensor em modo de leitura digital</li>
+<li><code>set_analog</code> coloca o sensor em modo de leitura analógica</li>
+<li><code>GPIO0</code> Controla as configurações do GPIO0</li>
+<li><code>GPIO1</code> Controla as configurações do GPIO1</li>
+</ul>
 <h2 id="configuracao-do-sensor">Configuração do sensor</h2>
 <p>Este sensor é configuravel, a tabela abaixo apresenta os principais parâmetros.</p>
 <table>
@@ -260,33 +287,6 @@ Conecte apenas um sensor por conexão (para configurar varios simultaneamente us
 <p>[!IMPORTANT]<br />
 Ao final envie o comando "save" para salvar as configurações, caso contrário, ao desligar as alterações são perdidas!</p>
 </blockquote>
-<h2 id="lista-de-comandos-do-shell">Lista de comandos do Shell</h2>
-<ul>
-<li><code>help</code> lista os comandos disponiveis</li>
-<li><code>exit</code> encerra o shell</li>
-<li><code>register</code> lê ou escreve um registrador de 8bits</li>
-<li><code>dump</code> lista as principais configurações</li>
-<li><code>vcc</code> mede a tensão aplicada no microcontrolador</li>
-<li><code>reset</code> reinicia o sensor</li>
-<li><code>save</code> salva as alterações realizadas</li>
-<li><code>restore</code> restaura as configurações de fábrica</li>
-<li><code>restore</code> restaura as configurações de fábrica sem alterar o endereço</li>
-<li><code>read</code> lê o sensor</li>
-<li><code>dump</code> lista as principais configurações</li>
-<li><code>address</code> lê ou altera o endereço do sensor</li>
-<li><code>e_freq</code> lê ou altera a frequência do emissor (de 0 a 255)</li>
-<li><code>e_brightness</code> lê ou altera o brilho do emissor (de 0 a 100)</li>
-<li><code>f_size</code> lê ou altera o comprimento do filtro (de 1 a 255)</li>
-<li><code>f_trigger</code> lê ou altera o limiar de acionamento do filtro (de 1 a <code>f_size</code>)</li>
-<li><code>aq_freq</code> lê ou altera a frequencia de aquisição (de 1 a 127). Recomendado 14khz. (0 significa o mais rapido possivel, mas o sinal pode ficar instavel).</li>
-<li><code>name</code> lê ou altera o nome do dispositivo (até 16 caracteres)</li>
-<li><code>uuid</code> lê o id único do sensor</li>
-<li><code>scan</code> scaneia com varios brilhos para definir um grau de distância. parâmetro: steps, start_value, step_size, measurements, threshold [%], frequency.</li>
-<li><code>set_digital</code> coloca o sensor em modo de leitura digital</li>
-<li><code>set_analog</code> coloca o sensor em modo de leitura analógica</li>
-<li><code>GPIO0</code> Controla as configurações do GPIO0</li>
-<li><code>GPIO1</code> Controla as configurações do GPIO1</li>
-</ul>
 <h2 id="diagrama-esquematimo">Diagrama Esquematimo</h2>
 <h3 id="conexao-usando-saida-digital-simples">Conexão usando Saida digital Simples</h3>
 <p><img alt="conexão_dogital" src="../sch_digital.png" /></p>
