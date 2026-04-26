@@ -20,6 +20,8 @@ nav:
       - FX-S200: Sensores/fxs200/FXS200.md
   - Placas:
       - FoxMini-ESP32: Placas/FoxMini_ESP32/FoxMini.md
+  - FoxLink:
+      - Home: foxlink/index.md
   - FoxWire e Shell:
       - Home: communication/index.md
       - FoxWire: communication/foxwire/foxwire.md
