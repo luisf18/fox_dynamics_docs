@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Home - Fox Dynamics</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "foxlink\\index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Fox Dynamics
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensores</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sensores/IrKey/IrKey/">IR-Key</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sensores/fxs50/FXS50/">FX-S50</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sensores/fxs200/FXS200/">FX-S200</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Placas</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Placas/FoxMini_ESP32/FoxMini/">FoxMini-ESP32</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxLink</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#opcao-1-foxlink-oficial-recomendado">[Opção 1] FoxLink oficial (recomendado) ⭐️</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#opcao-2-foxlink-usando-um-conversor-usb-serial">[Opção 2] FoxLink usando um conversor USB Serial</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#opcao-3-foxlink-usando-arduino-nano-ou-uno">[Opção 3] FoxLink usando Arduino Nano ou UNO</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#codigo-foxlink-bitwise-asm">Código FoxLink bitwise ASM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#alternativa-para-fazer-upload-online-sem-o-arduino-ide">Alternativa para fazer upload online sem o Arduino IDE</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../communication/">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../communication/foxwire/foxwire/">FoxWire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../communication/Shell/shell/">Shell</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Fox Dynamics</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">FoxLink</li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="foxlink">FoxLink</h1>
+<p>Um FoxLink é a placa que possibilita a comunicação entre o computador e os dispositivos da Fox. É recomendado usar o FoxLink oficial mas também é possovel montar. A seguir as alternativas.</p>
+<h2 id="opcao-1-foxlink-oficial-recomendado">[Opção 1] FoxLink oficial (recomendado) ⭐️</h2>
+<p>A Fox fornece um FoxLink oficial multiprotocolo. Ele é 4 em 1, funciona com dispositivos Fox (FoxWire/FoxShell), ESCs BLHeli e AM32 e também pode ser usando como conversor USB serial. O uso é simples, basta conectar o dispositivo nos primeiros 3 pinos (conforme a imagem). Obs: no modo foxlink, am32 e BlHeli o jumper precisa estar conectado.</p>
+<p><img alt="Texto alternativo" src="foxlink.png" />
+<img alt="Texto alternativo" src="FoxLink_connected.png" /></p>
+<h2 id="opcao-2-foxlink-usando-um-conversor-usb-serial">[Opção 2] FoxLink usando um conversor USB Serial</h2>
+<p>Conecte o TX da placa com o RX usando um resistor de 1Kohm. O pino RX será o pino de comunicação (Pino FX) que deverá ser conectado aos sensores.</p>
+<p><img alt="Texto alternativo" src="foxlink_usbserial.png" /></p>
+<h2 id="opcao-3-foxlink-usando-arduino-nano-ou-uno">[Opção 3] FoxLink usando Arduino Nano ou UNO</h2>
+<p>Outra opção é usar um <strong>Arduino Nano</strong> ou <strong>UNO</strong> como interface entre o computador e os dispositivos Fox. No entanto, a comunicação não é tão estavel como usando um conversor USB Serial ou FoxLink oficial. Por isso, se for usar, teste mais de uma vez se as configurações de fato foram salvas.</p>
+<h3 id="codigo-foxlink-bitwise-asm">Código FoxLink bitwise ASM</h3>
+<p>Abra o Arduino IDE ou o <a href="https://luisf18.github.io/FoxLink_web_tool/uploader"><strong>Arduino uploader</strong></a>, faça upload do código abaixo, em seguida conecte o pino de sinal do sensor, "FX", ao pino 0 também conhecido como "RX".</p>
+<p>✅ <em>A versão atual melhorou significativamente o desempenho.</em></p>
+<pre><code class="language-c++">// Fox Dynamics Team
+// FoxLink bitwise ASM V0.2
+#include &lt;avr/io.h&gt;
+
+int main() {
+  DDRD = (1 &lt;&lt; PD1);
+  PORTD = (1 &lt;&lt; PD0);
+  while (1) {
+      asm volatile (
+          &quot;in r0, %[pin]&quot; &quot;\n\t&quot;
+          &quot;bst r0, 0&quot; &quot;\n\t&quot;
+          &quot;bld r0, 1&quot; &quot;\n\t&quot;
+          &quot;out %[port], r0&quot; &quot;\n\t&quot;
+          :
+          : [pin] &quot;I&quot; (_SFR_IO_ADDR(PIND)),
+            [port] &quot;I&quot; (_SFR_IO_ADDR(PORTD))
+          : &quot;r0&quot;
+      );
+  }
+}
+</code></pre>
+<h3 id="alternativa-para-fazer-upload-online-sem-o-arduino-ide">Alternativa para fazer upload online sem o Arduino IDE</h3>
+<p>A Fox disponibiliza uma ferramenta de upload de binarios ja compilados para Arduino o <a href="https://luisf18.github.io/FoxLink_web_tool/uploader"><strong>Arduino uploader</strong></a>. Para carregar o código do <strong>Arduino Foxlink</strong> acesse o <a href="https://luisf18.github.io/FoxLink_web_tool/uploader"><strong>Arduino uploader</strong></a>, escolha e conecte a placa, depois selecione o exemplo <strong>Arduino Foxlink</strong> e clique em <strong>Carregar exemplo</strong>. O codigo será instalado e a placa ja estará pronta para uso com o <a href="https://luisf18.github.io/FoxLink_web_tool"><strong>FoxLink webtool</strong></a></p>
+<p><img alt="Texto alternativo" src="uploader_foxlink.png" /></p>
+<p><img alt="Texto alternativo" src="foxlink_arduino_asm.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Placas/FoxMini_ESP32/FoxMini/" class="btn btn-neutral float-left" title="FoxMini-ESP32"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../communication/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Placas/FoxMini_ESP32/FoxMini/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../communication/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

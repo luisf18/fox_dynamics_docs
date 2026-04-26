@@ -58,15 +58,21 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#pinagem">Pinagem</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lista-de-comandos-do-shell-fx-s50-firmware-v14">Lista de comandos do Shell (FX-S50 Firmware V1.4)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#principais-parametros">Principais parâmetros</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#configuracao-do-sensor">Configuração do sensor</a>
+    <li class="toctree-l2"><a class="reference internal" href="#como-configurar">Como configurar?</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#como-configurar-usando-o-modo-shell">Como configurar usando o modo Shell</a>
+    <li class="toctree-l3"><a class="reference internal" href="#configurando-com-foxlink-webtool">Configurando com FoxLink WebTool</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#foxlink-webtool-descricao-de-cada-campo">FoxLink WebTool: Descrição de cada campo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#como-configurar-no-modo-shell">Como configurar no modo Shell</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#diagrama-esquematimo">Diagrama Esquematimo</a>
+    <li class="toctree-l2"><a class="reference internal" href="#lista-de-comandos-do-shell-fx-s50-firmware-v14">Lista de comandos do Shell (FX-S50 Firmware V1.4)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#diagrama-esquematimo">Diagrama Esquemátimo</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#conexao-usando-saida-digital-simples">Conexão usando Saida digital Simples</a>
     </li>
@@ -84,6 +90,11 @@
               <p class="caption"><span class="caption-text">Placas</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../../Placas/FoxMini_ESP32/FoxMini/">FoxMini-ESP32</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxLink</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../foxlink/">Home</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
@@ -124,8 +135,8 @@
 <p>Sensor digital de obstáculos compacto, rápido e configurável. Possui duas formas de leitura: saída digital ou FoxWire (FX). Usando FoxWire é possivel conectar até 32 sensores em um unico fio, reduzindo a complexidade de conexões. A saida dital é 1 quando detecta um obstaculo e 0 quando não detecta.</p>
 <!--Além disso, o sensor possui um modo "Shell", que possibilita conectá-lo a um computador através de um conversor USB-Serial. Esse modo permite a leitura de dados e a configuração detalhada dos parâmetros.-->
 
-<p><strong>Datasheet:</strong> <a href="../Sensor_FXS50/Datasheet_FX_S50.pdf">Datasheet_FXS50</a><br />
-<strong>Modelo 3D:</strong> <a href="./SensorMini_3dmodel.step">Modelo 3D STEP</a></p>
+<p><strong>Datasheet:</strong> <a href="../Datasheet_FX_S50.pdf">Datasheet_FXS50</a><br />
+<strong>Modelo 3D:</strong> <a href="../SensorMini_3dmodel.step">Modelo 3D STEP</a></p>
 <p><img alt="Alt text" src="../frente.png" /></p>
 <iframe data-v-ad9fcaae=""
   src="https://www.youtube.com/embed/7ljwJTxrwXw?rel=0&amp;cc_lang_pref=en&amp;cc_load_policy=1"
@@ -191,9 +202,106 @@
 <li>Pino Fox Wire (Configuração e leitura)</li>
 </ul>
 <p><img alt="Pinagem" src="../diagrama_funcional.png" /></p>
+<h2 id="principais-parametros">Principais parâmetros</h2>
+<p>Este sensor é configuravel, a tabela abaixo apresenta os principais parâmetros.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parametros</strong></th>
+<th><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Endereço Fox Wire</strong></td>
+<td>Endereço do dispositivo para o protocoolo Fox Wire</td>
+</tr>
+<tr>
+<td><strong>Modo de leitura</strong></td>
+<td>Modo <strong>Digital</strong> (0 sem obstaculos 1 com) ou <strong>Analógico</strong> ( de 0 a 20, quanto maior mais distante). No modo <strong>Analógico</strong> a leitura do valor é feita via pino <strong>FX</strong>.</td>
+</tr>
+<tr>
+<td><strong>Potência do Emissor</strong></td>
+<td>Potência do emissor, quanto maior maior o alcance. Varia de 10 a 100</td>
+</tr>
+<tr>
+<td><strong>Frequência do Emissor</strong></td>
+<td>Frequência do emissor, pode ser util para ajustar o alcance ou melhorar o desempenho de sensores proximos (*). valor normalizado de 0 a 255</td>
+</tr>
+<tr>
+<td><strong>Trig e Filter_len</strong></td>
+<td>Ajuste de filtragem do sinal usando um integrador e um "schmitt trigger". Quanto maior a filtragem mais estavel, porém menor a frequência de atualização. O usuario pode fazer o ajuste fino para determinar a melhor configuração</td>
+</tr>
+</tbody>
+</table>
+<p>(*) Na deteção a longa distância a luz emitida por dois sensore um ao lado do outro a luz emitida por cada um pode causar interferencia destrutiva, reduzindo o alcalce de cada um. Usar frequências um pouco diferentes pode ajudar nisso.</p>
+<p><strong>No FX-S50 Como alterar o alcance do sensor</strong> 📏<br />
+A forma mais simples é alterando o parâmetro <strong>led power</strong> ou <strong>e_brightness</strong> (no shell), que controla a luminosidade do emissor do sensor. Quanto maior a luminosidade, maior o alcance. Este parâmetro pode variar de 5 a 100.</p>
+<h2 id="como-configurar">Como configurar?</h2>
+<p>Existem duas Formas de configurar o sensor, via o <strong>Fox WebTool</strong> ou via o modo <strong>Shell</strong>. Mas antes de tudo é preciso de ter um <strong>FoxLink</strong> que é a placa que conecta o sensor ao computador, acesse <a href="../../../foxlink"><strong>FoxLink</strong></a> para mais informações.</p>
+<p>O <strong>FoxLink WebTool</strong> é uma ferramenta gráfica que roda no navegador que permite ler em tempo real o sensor e mudar suas configurações. Já o modo <strong>Shell</strong> usa comandos de texto para fazer o mesmo sem interface gráfica, rodando em qualquer aplicativo para comunicação serial, como Arduino IDE + Serial monitor, Putty ou <a href="https://luisf18.github.io/FoxLink_web_tool/serial.html"><strong>Fox Serial</strong></a>.</p>
+<h3 id="configurando-com-foxlink-webtool">Configurando com FoxLink WebTool</h3>
+<ol>
+<li>Acesse <a href="https://luisf18.github.io/FoxLink_web_tool"><strong>FoxLink WebTool</strong></a>.</li>
+<li>Clique no botão <strong>Conectar</strong> e selecione a porta COM do <strong>FoxLink</strong>. <strong>Dica</strong>: caso não conecte, verifique se a porta COM está em uso por outro aplicativo, como Arduino IDE ou fatiador 3D. Caso esteja, feche o outro aplicativo e reinicie a página.  </li>
+<li>Clique no botão <strong>Scan</strong> para buscar dispositivos na rede <strong>FoxWire</strong>.  </li>
+<li>A ferramenta listará os endereços onde encontrou dispositivos e irá gerar uma janela de configuração para cada. Similar a imagem a seguir.</li>
+<li>Para realizar um novo scan, basta clicar novamente em <strong>Scan</strong> e aguardar.</li>
+</ol>
+<p><img alt="Texto alternativo" src="../exampleDevice.png" /></p>
+<h3 id="foxlink-webtool-descricao-de-cada-campo">FoxLink WebTool: Descrição de cada campo</h3>
+<ol>
+<li><strong>Identificação do dispositivo:</strong> Foto, Nome, Modelo e Lote.</li>
+<li><strong>Parâmetros</strong> Parametros que podem ser alterados.</li>
+<li><strong>Gráfico em tempo real da leitura do dispositivo.</strong></li>
+<li><strong>Botões de ação do sensor:</strong><ul>
+<li><code>Read</code>: Lê o valor de cada parâmetro no dispositivo.</li>
+<li><code>Apply</code>: Aplica os valores de cada parâmetro no dispositivo.</li>
+<li><code>Save</code>: Salva permanentemente as configurações aplicadas.</li>
+<li><code>Default</code>: Retorna à configuração padrão. Para salvar essa configuração, é necessário clicar em <code>Save</code> em seguida.</li>
+<li><code>Reset</code>: Reinicia o dispositivo e após o reset lê (<code>Read</code>).  </li>
+</ul>
+</li>
+</ol>
+<p><img alt="Texto alternativo" src="../exampleParam.png" /></p>
+<p>Cada parâmetro possui 3 icones do lado direito. Eles indicam se:</p>
+<ul>
+<li><strong>Return</strong> se o valor atual é o mesmo que o lido do dispositivo. ao clicar ele retorna pro valor lido.</li>
+<li><strong>Home</strong> se o valor atual é o mesmo que o valor default,
+ao clicar vai para o valor default.</li>
+<li><strong>Circulo</strong> se o valor atual ja foi salvo (🟢 Verde = Salvo, 🔴 Vermelho = Não salvo), não é clicavel.</li>
+</ul>
+<h3 id="como-configurar-no-modo-shell">Como configurar no modo Shell</h3>
+<p>O modo Shell é usado para se comunicar diretamente com o sensor usando comandos de texto. Esse modo só permite a comunicação com um unico sensor por vez (Para configurar varios sensores simultaneamente use Fox Wire).</p>
+<p>⚠️ <strong>IMPORTANTE:</strong><br />
+1. O modo <strong>Shell</strong> só funciona com um dispositivo conectado ao <strong>FoxLink</strong> por vez. (para configurar varios simultaneamente use <strong>FoxLink WebTool</strong>).<br />
+2. Ao terminar de configurar envie o comando <strong>"save"</strong> para salvar as alterações, caso contrário, ao desligar as alterações são perdidas!  </p>
+<p><strong>Procedimento:</strong><br />
+1. Conecte o sensor ao computador usando um <strong>FoxLink</strong>;<br />
+2. Abra algum aplicativo de comunicação Serial, como <strong>Arduino IDE</strong> + <strong>Serial monitor</strong>, <strong>Putty</strong> ou <a href="https://luisf18.github.io/FoxLink_web_tool/serial.html"><strong>Fox Serial</strong></a>;<br />
+3. Selecione a COM do  <strong>FoxLink</strong>;<br />
+4. Configure o baudrate para 115200 e "\n"+"\r" ao final ou "NL &amp; CR" (no Arduino);<br />
+5. Envie <strong>"FOX-SHELL"</strong> para o sensor entrar no modo Shell. O sensor irá responder enviando <strong>"FOX-SHELL INIT!"</strong>.<br />
+6. Com o modo Shell iniciado você pode configurar o sensor ou realizar medições. Digite o comando "help" para exibir a lista de comandos disponiveis.<br />
+7. O comando "dump" exibe os valores de configuração do sensor.  </p>
+<p><img alt="Monitor" src="../shell_serial_monitor_1.png" /></p>
+<p><img alt="Monitor" src="../shell_serial_monitor_2.png" /></p>
+<p><img alt="Monitor" src="../shell_serial_monitor_3.png" /></p>
+<p><img alt="Monitor" src="../shell_serial_monitor_4.png" /></p>
+<!--  > [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+-->
+
 <h2 id="lista-de-comandos-do-shell-fx-s50-firmware-v14">Lista de comandos do Shell (FX-S50 Firmware V1.4)</h2>
 <ul>
-<li><code>help</code> lista os comandos disponiveis</li>
+<li><code>help</code> lista os comandos disponíveis</li>
 <li><code>exit</code> encerra o shell</li>
 <li><code>register</code> lê ou escreve um registrador de 8bits</li>
 <li><code>dump</code> lista as principais configurações</li>
@@ -218,84 +326,12 @@
 <li><code>GPIO0</code> Controla as configurações do GPIO0</li>
 <li><code>GPIO1</code> Controla as configurações do GPIO1</li>
 </ul>
-<h2 id="configuracao-do-sensor">Configuração do sensor</h2>
-<p>Este sensor é configuravel, a tabela abaixo apresenta os principais parâmetros.</p>
-<table>
-<thead>
-<tr>
-<th>Parametros</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Endereço Fox Wire</td>
-<td>Endereço do dispositivo para o protocoolo Fox Wire</td>
-</tr>
-<tr>
-<td>Potência do Emissor</td>
-<td>Potência do emissor, quanto maior maior o alcance. Varia de 10 a 100</td>
-</tr>
-<tr>
-<td>Frequência do Emissor</td>
-<td>Frequência do emissor, pode ser util para ajustar o alcance ou melhorar o desempenho de sensores proximos (*). valor normalizado de 0 a 255</td>
-</tr>
-<tr>
-<td>Trig e Filter_len</td>
-<td>Ajuste de filtragem do sinal usando um integrador e um "schmitt trigger". Quanto maior a filtragem mais limpo o sinal, porém menor a frequencia de atualização. O usuario pode fazer o ajuste fino para determinar a melhor configuração</td>
-</tr>
-</tbody>
-</table>
-<p>(*) Na deteção a longa distância a luz emitida por dois sensore um ao lado do outro a luz emitida por cada um pode causar interferencia destrutiva, reduzindo o alcalce de cada um. Usar frequências um pouco diferentes pode ajudar nisso.</p>
-<h3 id="como-configurar-usando-o-modo-shell">Como configurar usando o modo Shell</h3>
-<p>O modo Shell é usado para se comunicar diretamente com o sensor usando comandos de texto. Esse modo só permite a comunicação com um unico sensor por vez (Para configurar varios sensores simultaneamente use Fox Wire).</p>
-<ol>
-<li>
-<p>Conecte o sensor ao computador usando um conversor USB-Serial ou um arduino (<a href="#FxSerial">Conexão usando Fox Wire com Conversor USB Serial</a>).</p>
-</li>
-<li>
-<p>Abra algum aplicativo de comunicação Serial, como Putty ou o próprio Serial Monitor do Arduino. Configure com baudrate de 115200. No Serial Monitor pode escolher qualquer placa desde que seja a COM correta, por simplicidade selecionei um Arduino.</p>
-</li>
-</ol>
-<p><img alt="Monitor" src="../shell_serial_monitor_1.png" /></p>
-<ol>
-<li>Digite "FOX-SHELL" para o sensor entrar no modo Shell. O sensor irá responder enviando "FOX-SHELL INIT!".  </li>
-</ol>
-<p><img alt="Monitor" src="../shell_serial_monitor_2.png" /></p>
-<ol>
-<li>Com o modo Shell iniciado você pode configurar o sensor ou realizar medições. Digite o comando "help" para exibir a lista de comandos disponiveis.</li>
-</ol>
-<p><img alt="Monitor" src="../shell_serial_monitor_3.png" /></p>
-<ol>
-<li>O comando "dump" exibe os valores de configuração do sensor.</li>
-</ol>
-<p><img alt="Monitor" src="../shell_serial_monitor_4.png" /></p>
-<!--  > [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
-
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
--->
-
-<blockquote>
-<p>[!WARNING]<br />
-Conecte apenas um sensor por conexão (para configurar varios simultaneamente use FoxWire)</p>
-<p>[!IMPORTANT]<br />
-Ao final envie o comando "save" para salvar as configurações, caso contrário, ao desligar as alterações são perdidas!</p>
-</blockquote>
-<h2 id="diagrama-esquematimo">Diagrama Esquematimo</h2>
+<h2 id="diagrama-esquematimo">Diagrama Esquemátimo</h2>
 <h3 id="conexao-usando-saida-digital-simples">Conexão usando Saida digital Simples</h3>
 <p><img alt="conexão_dogital" src="../sch_digital.png" /></p>
 <h3 id="conexao-usando-fox-wire">Conexão usando Fox Wire</h3>
 <p>Repositório FoxWire: <a href="https://github.com/luisf18/FoxWire">https://github.com/luisf18/FoxWire</a> </p>
 <p><img alt="Alt text" src="../sch_fox_wire.png" /></p>
-<h3 id="FxSerial">Conexão usando Fox Wire com Conversor USB Serial</h3>
-
-<p><img alt="Alt text" src="../fx_serial.png" /></p>
 <h2 id="exemplo-de-codigo-usando-a-saida-digital-simples">Exemplo de código usando a saida digital simples</h2>
 <pre><code class="language-c++">// Fox Dynamics Team
 // Codigo simples usando a saida digital
