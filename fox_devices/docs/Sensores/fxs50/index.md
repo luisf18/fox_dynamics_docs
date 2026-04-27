@@ -9,7 +9,7 @@ Sensor digital de obstáculos compacto, rápido e configurável. Possui duas for
 **Datasheet:** [Datasheet_FXS50](Datasheet_FX_S50.pdf)  
 **Modelo 3D:** [Modelo 3D STEP](SensorMini_3dmodel.step)
 
-![Alt text](frente.png)
+![Alt text](FXS50_2026.png)
 
 <iframe data-v-ad9fcaae=""
   src="https://www.youtube.com/embed/7ljwJTxrwXw?rel=0&amp;cc_lang_pref=en&amp;cc_load_policy=1"
@@ -73,12 +73,19 @@ A forma mais simples é alterando o parâmetro **led power** ou **e_brightness**
 
 ## Como configurar?
 
-Existem duas Formas de configurar o sensor, via o **Fox WebTool** ou via o modo **Shell**. Mas antes de tudo é preciso de ter um **FoxLink** que é a placa que conecta o sensor ao computador, acesse [**FoxLink**](../../../foxlink) para mais informações.
+Existem duas formas de configurar o sensor: pelo [**FoxLink WebTool**](https://luisf18.github.io/FoxLink_web_tool/) ou pelo modo **Shell**.
 
-O **FoxLink WebTool** é uma ferramenta gráfica que roda no navegador que permite ler em tempo real o sensor e mudar suas configurações. Já o modo **Shell** usa comandos de texto para fazer o mesmo sem interface gráfica, rodando em qualquer aplicativo para comunicação serial, como Arduino IDE + Serial monitor, Putty ou [**Fox Serial**](https://luisf18.github.io/FoxLink_web_tool/serial.html).
+Antes de começar, é necessário ter um **FoxLink**, que é a placa responsável por conectar o sensor ao computador.
+Veja mais em: [**FoxLink**](../../../foxlink)
+
+O [**FoxLink WebTool**](https://luisf18.github.io/FoxLink_web_tool/) é uma ferramenta gráfica que roda no navegador e permite configurar o sensor e visualizar sua leitura em tempo real.
+
+Já o modo **Shell** utiliza comandos de texto para realizar as mesmas operações, sem interface gráfica. Ele pode ser usado em qualquer software de comunicação serial, como **Arduino IDE** (Serial Monitor), **Putty** ou [**Fox Serial**](https://luisf18.github.io/FoxLink_web_tool/serial.html).
 
 
 ### Configurando com FoxLink WebTool
+
+![webtool](webtool.png)
 
 1. Acesse [**FoxLink WebTool**](https://luisf18.github.io/FoxLink_web_tool).
 2. Clique no botão **Conectar** e selecione a porta COM do **FoxLink**. **Dica**: caso não conecte, verifique se a porta COM está em uso por outro aplicativo, como Arduino IDE ou fatiador 3D. Caso esteja, feche o outro aplicativo e reinicie a página.  
@@ -111,39 +118,7 @@ ao clicar vai para o valor default.
 
 ### Como configurar no modo Shell
 
-O modo Shell é usado para se comunicar diretamente com o sensor usando comandos de texto. Esse modo só permite a comunicação com um unico sensor por vez (Para configurar varios sensores simultaneamente use Fox Wire).
-
-⚠️ **IMPORTANTE:**  
-1. O modo **Shell** só funciona com um dispositivo conectado ao **FoxLink** por vez. (para configurar varios simultaneamente use **FoxLink WebTool**).  
-2. Ao terminar de configurar envie o comando **"save"** para salvar as alterações, caso contrário, ao desligar as alterações são perdidas!  
-
-**Procedimento:**  
-1. Conecte o sensor ao computador usando um **FoxLink**;  
-2. Abra algum aplicativo de comunicação Serial, como **Arduino IDE** + **Serial monitor**, **Putty** ou [**Fox Serial**](https://luisf18.github.io/FoxLink_web_tool/serial.html);  
-3. Selecione a COM do  **FoxLink**;  
-4. Configure o baudrate para 115200 e "\n"+"\r" ao final ou "NL & CR" (no Arduino);  
-5. Envie **"FOX-SHELL"** para o sensor entrar no modo Shell. O sensor irá responder enviando **"FOX-SHELL INIT!"**.  
-6. Com o modo Shell iniciado você pode configurar o sensor ou realizar medições. Digite o comando "help" para exibir a lista de comandos disponiveis.  
-7. O comando "dump" exibe os valores de configuração do sensor.  
-
-![Monitor](shell_serial_monitor_1.png)
-
-![Monitor](shell_serial_monitor_2.png)
-
-![Monitor](shell_serial_monitor_3.png)
-
-![Monitor](shell_serial_monitor_4.png)
-
-<!--  > [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
-
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
--->
+O modo Shell é usado para se comunicar diretamente com o sensor usando comandos de texto. Esse modo só permite a comunicação com um unico sensor por vez (Para configurar varios sensores simultaneamente use Fox Wire). Mais informações e passo a passo em [Shell](../../../communication/Shell).
 
 ## Lista de comandos do Shell (FX-S50 Firmware V1.4)
 

@@ -15,17 +15,22 @@ extra_css:
 nav:
   - Home: index.md
   - Sensores:
-      - IR-Key: Sensores/IrKey/IrKey.md
-      - FX-S50: Sensores/fxs50/FXS50.md
-      - FX-S200: Sensores/fxs200/FXS200.md
-  - Placas:
-      - FoxMini-ESP32: Placas/FoxMini_ESP32/FoxMini.md
+      - IR-Key: Sensores/IrKey/index.md
+      - FX-S50: Sensores/fxs50/index.md
+      - FX-S200: Sensores/fxs200/index.md
+      - Linha: Sensores/linha/index.md
+  - ESC:
+      - ESCs Brushed Duplo: escs/esc_brushed_duplo.md
+  - controladoras:
+      - FoxMini-ESP32: controladoras/FoxMini_ESP32/FoxMini.md
+  - Outros:
+      - Chave para Combate: outros/chaves_combate.md
   - FoxLink:
       - Home: foxlink/index.md
   - FoxWire e Shell:
       - Home: communication/index.md
-      - FoxWire: communication/foxwire/foxwire.md
-      - Shell: communication/Shell/shell.md
+      - FoxWire: communication/foxwire/index.md
+      - Shell: communication/Shell/index.md
 
 #extra:
 #  social:

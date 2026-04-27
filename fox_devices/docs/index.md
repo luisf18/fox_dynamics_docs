@@ -2,17 +2,26 @@
 
 ## Sensores
 
-| [![.](images/fxs50.png)](Sensores/fxs50/FXS50.md) | [![.](images/IrKey.png)](Sensores/IrKey/IrKey.md) |![.](images/fx200.png) |
+| [![.](images/fxs50.png)](Sensores/fxs50) | [![.](images/IrKey.png)](Sensores/IrKey) |[![.](images/fx200.png)](Sensores/fxs200/) |
 |:---:|:--------:|:--------:|
-| [FX-S50](Sensores/fxs50/FXS50.md) | [IR-Key](Sensores/IrKey/IrKey.md) | [FX-S200](Sensores/fxs200/fxs200.md) |
+| [FX-S50](Sensores/fxs50) | [IR-Key](Sensores/IrKey) | [FX-S200](Sensores/fxs200) |
+| [![.](Sensores/linha/img.png)](Sensores/linha) |  | |
+| [Linha](Sensores/linha) |  |  |
 
-## Placas
+## ESCs Brushed
+
+| [![.](escs/img_2x5.png)](escs/esc_brushed_duplo) | [![.](escs/img_2x3.png)](escs/esc_brushed_duplo) |[![.](escs/img_2x1p5.png)](escs/esc_brushed_duplo) |
+|:---:|:--------:|:--------:|
+| [ESC Brushed 2x5A](escs/esc_brushed_duplo) | [ESC Brushed 2x3A](escs/esc_brushed_duplo) | [ESC Brushed 2x1.5A](escs/esc_brushed_duplo) |
+
+## Controladoras
 
 |   [![.](images/FoxMini.png)](Placas/FoxMini_ESP32/FoxMini.md) | ![.](images/BBRX-FS.png) |
 |:----:|:--------:|
 |  [FoxMini-ESP32](Placas/FoxMini_ESP32/FoxMini.md)  |  BBRX-FS  |
 
-## ESCs
+## Chaves gerais para combate
 
-Em breve.
-
+| [![.](outros/chave_led.png)](outros/chaves_combate) | [![.](outros/micro_chave.png)](outros/chaves_combate) |
+|:---:|:--------:|
+| [Chave com LED](outros/chaves_combate) | [Micro Chave](outros/chaves_combate) |

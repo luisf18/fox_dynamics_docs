@@ -150,37 +150,22 @@ Cores: [ RED=0 (0:255) ][ GREEN=0 (0:255) ][ BLUE=0 (0:255) ]
 * color_serv
 
 
-## Conexão com o computador
+## Como configurar?
 
-Utilize uma placa Fox Link, ou monte uma com  Arduino UNO ou Nano, fazendo upload nele do codigo abaixo.
+Existem duas formas de configurar o sensor: pelo [**FoxLink WebTool**](https://luisf18.github.io/FoxLink_web_tool/) ou pelo modo **Shell**.
 
-```c++
-// Fox Dynamics
-// FoxLink bitwise ASM V0.2
-#include <avr/io.h>
+Antes de começar, é necessário ter um **FoxLink**, que é a placa responsável por conectar o sensor ao computador.
+Veja mais em: [**FoxLink**](../../../foxlink)
 
-int main() {
-  DDRD = (1 << PD1);
-  PORTD = (1 << PD0);
-  while (1) {
-      asm volatile (
-          "in r0, %[pin]" "\n\t"
-          "bst r0, 0" "\n\t"
-          "bld r0, 1" "\n\t"
-          "out %[port], r0" "\n\t"
-          :
-          : [pin] "I" (_SFR_IO_ADDR(PIND)),
-            [port] "I" (_SFR_IO_ADDR(PORTD))
-          : "r0"
-      );
-  }
-}
-```
+O [**FoxLink WebTool**](https://luisf18.github.io/FoxLink_web_tool/) é uma ferramenta gráfica que roda no navegador e permite configurar o sensor e visualizar sua leitura em tempo real.
+
+Já o modo **Shell** utiliza comandos de texto para realizar as mesmas operações, sem interface gráfica. Ele pode ser usado em qualquer software de comunicação serial, como **Arduino IDE** (Serial Monitor), **Putty** ou [**Fox Serial**](https://luisf18.github.io/FoxLink_web_tool/serial.html).
 
 ### Circuito
 
 ![circuito com fox-link](foxlink.png)
 
+<!--
 ### Ferramentas para configurar
 
 Atualmente existe as seguintes opções:
@@ -188,8 +173,9 @@ Atualmente existe as seguintes opções:
 * Arduino IDE com Serial monitor ou outro. Usando comandos de texto.
 * `foxwire cli` Comandos via foxwire usando cli python ([instale usando pip](https://pypi.org/project/foxwire/)).
 * `foxwire webtool` configuração de forma gráfica e simples. *Mais recomendado!*
+-->
 
-## Configuração no Foxwire WebTool
+## Configuração com FoxLink WebTool
 
 [FoxLink Webtool](https://luisf18.github.io/FoxLink_web_tool/)
 
