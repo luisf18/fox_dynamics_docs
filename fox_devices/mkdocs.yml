@@ -22,7 +22,7 @@ nav:
   - ESC:
       - ESCs Brushed Duplo: escs/esc_brushed_duplo.md
   - controladoras:
-      - FoxMini-ESP32: controladoras/FoxMini_ESP32/FoxMini.md
+      - FoxMini-ESP32: controladoras/FoxMini_ESP32/index.md
   - Outros:
       - Chave para Combate: outros/chaves_combate.md
   - FoxLink:
