@@ -4,22 +4,22 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>IR-Key - Fox Dynamics</title>
-    <link rel="stylesheet" href="../../../css/theme.css" />
-    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-        <link href="../../../extra.css" rel="stylesheet" />
+        <link href="../../extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
         var mkdocs_page_name = "IR-Key";
-        var mkdocs_page_input_path = "Sensores\\IrKey\\IrKey.md";
+        var mkdocs_page_input_path = "Sensores\\IrKey\\index.md";
         var mkdocs_page_url = null;
       </script>
     
     <!--[if lt IE 9]>
-      <script src="../../../js/html5shiv.min.js"></script>
+      <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
       <script>hljs.highlightAll();</script> 
@@ -31,9 +31,9 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="../../.." class="icon icon-home"> Fox Dynamics
+          <a href="../.." class="icon icon-home"> Fox Dynamics
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -41,7 +41,7 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Sensores</span></p>
@@ -66,40 +66,50 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#lista-de-comandos-do-shell">Lista de comandos do Shell</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#conexao-com-o-computador">Conexão com o computador</a>
+    <li class="toctree-l2"><a class="reference internal" href="#como-configurar">Como configurar?</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#circuito">Circuito</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ferramentas-para-configurar">Ferramentas para configurar</a>
-    </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#configuracao-no-foxwire-webtool">Configuração no Foxwire WebTool</a>
+    <li class="toctree-l2"><a class="reference internal" href="#configuracao-com-foxlink-webtool">Configuração com FoxLink WebTool</a>
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../fxs50/FXS50/">FX-S50</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../fxs50/">FX-S50</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../fxs200/FXS200/">FX-S200</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../fxs200/">FX-S200</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../linha/">Linha</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Placas</span></p>
+              <p class="caption"><span class="caption-text">ESC</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../Placas/FoxMini_ESP32/FoxMini/">FoxMini-ESP32</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../escs/esc_brushed_duplo/">ESCs Brushed Duplo</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">controladoras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../controladoras/FoxMini_ESP32/FoxMini/">FoxMini-ESP32</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Outros</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outros/chaves_combate/">Chave para Combate</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FoxLink</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../foxlink/">Home</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../foxlink/">Home</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../communication/">Home</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/">Home</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../communication/foxwire/foxwire/">FoxWire</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/foxwire/">FoxWire</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../../communication/Shell/shell/">Shell</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/Shell/">Shell</a>
                   </li>
               </ul>
       </div>
@@ -109,13 +119,13 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../..">Fox Dynamics</a>
+          <a href="../..">Fox Dynamics</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Sensores</li>
       <li class="breadcrumb-item active">IR-Key</li>
     <li class="wy-breadcrumbs-aside">
@@ -128,7 +138,7 @@
               
                 <h1 id="irkey">IrKey</h1>
 <p><em>Firmware V1.0</em></p>
-<p><img alt="Chave IR" src="../sides.png" /></p>
+<p><img alt="Chave IR" src="sides.png" /></p>
 <p>Módulo Leitor IR 3 em 1.  </p>
 <ul>
 <li><code>IR-Start</code> Acionamento de robôs de sumô ou Seguidor de Linha, via Controle remoto ou botão com 5 segundos.</li>
@@ -141,7 +151,7 @@
 <li>SAMSUNG</li>
 </ul>
 <h2 id="pinout">Pinout</h2>
-<p><img alt="botões start" src="../pinout.png" /></p>
+<p><img alt="botões start" src="pinout.png" /></p>
 <table>
 <thead>
 <tr>
@@ -171,7 +181,7 @@
 <p><strong>Obs:</strong> O pino <strong>FX</strong> só trabalha com 3V3. Não é tolerante a 5V.</p>
 <h2 id="utilizacao-modo-ir-start">Utilização Modo IR-Start</h2>
 <p>Ao ligar, o modulo inicia no modo <code>IR-Start</code>, recebendo comando do controle do juiz seguindo a sequência de inicialização. Também é possivel acionar usando o botão com cliques. </p>
-<p><img alt="Chave IR" src="../fluxo_start.png" /></p>
+<p><img alt="Chave IR" src="fluxo_start.png" /></p>
 <table>
 <thead>
 <tr>
@@ -203,7 +213,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="botões start" src="../controle_start.png" /></p>
+<p><img alt="botões start" src="controle_start.png" /></p>
 <h3 id="leitura-dos-comandos-ir-via-pino-fx">Leitura dos comandos IR via pino FX</h3>
 <p>Cada comando recebido é enviado via USART no pino <strong>FX</strong>. Essa funcionalidade pode ser desativada via registrador <code>CTRL</code> (mais detalhes em <strong>configuração</strong>). </p>
 <p>As mensagens iniciam com o caracter "&gt;" em seguida os dados são enviadas em formato CSV separado por virgula e com caracteres de fim de "\n\r".</p>
@@ -225,7 +235,7 @@
 <li><code>Configuração</code>: pressione o botão por cerca de 1,5s até o led começar a piscar rapidamente na cor roxa. Para salvar, pressione e segure o botão por cerca de 1,5s até o led começar a piscar rapidamente na cor roxa e depois ficar Roxo durante alguns milisegundos enquanto salva, ao final ele reinicia a chave. Para sair sem salvar basta dar um clique curto.</li>
 <li><code>Servo</code>: pressione o botão por cerca de 5s até o led acender na cor azul esverdeada. Para retornar a <code>IR-Start</code> (Modo Default) basta dar um clique curto.</li>
 </ul>
-<p><img alt="Chave IR" src="../fluxo_modos.png" /></p>
+<p><img alt="Chave IR" src="fluxo_modos.png" /></p>
 <h2 id="modo-configuracao">Modo <code>Configuração</code></h2>
 <p>No controle remoto clique no botão que deseja alterar a cor, por exemplo botão 1 (<code>prepare</code>). O LED ficará piscando na cor correspondente. Opções:</p>
 <ul>
@@ -234,7 +244,7 @@
 <li><strong>Botão centro (ok):</strong> retorna a respectiva cor padrão.</li>
 </ul>
 <p><em>Ao final salve a configuração segurando o botão por cerca de 1.5s.</em></p>
-<p><img alt="botões start" src="../controle_config.png" /></p>
+<p><img alt="botões start" src="controle_config.png" /></p>
 <h2 id="modo-servo">Modo <code>Servo</code></h2>
 <p>Nesse modo cada botão corresponde a um conjunto de valores do PWM para S e FX.</p>
 <table>
@@ -304,7 +314,7 @@
 </tbody>
 </table>
 <p><strong>(*):</strong> Quando o botão é solto ele retorna para S=1500 e FX=1500.</p>
-<p><img alt="botões start" src="../controle_servo.png" /></p>
+<p><img alt="botões start" src="controle_servo.png" /></p>
 <h2 id="registradores-de-configuracao">Registradores de Configuração</h2>
 <p>Este dispositivo possui registradores que armazenam valores que determinam as configurações, como: cor de cada ação e protocolos aceitos. A tabela abaixo descreve os registradores:</p>
 <table>
@@ -403,52 +413,38 @@
 <li>color_prepare</li>
 <li>color_serv</li>
 </ul>
-<h2 id="conexao-com-o-computador">Conexão com o computador</h2>
-<p>Utilize uma placa Fox Link, ou monte uma com  Arduino UNO ou Nano, fazendo upload nele do codigo abaixo.</p>
-<pre><code class="language-c++">// Fox Dynamics
-// FoxLink bitwise ASM V0.2
-#include &lt;avr/io.h&gt;
-
-int main() {
-  DDRD = (1 &lt;&lt; PD1);
-  PORTD = (1 &lt;&lt; PD0);
-  while (1) {
-      asm volatile (
-          &quot;in r0, %[pin]&quot; &quot;\n\t&quot;
-          &quot;bst r0, 0&quot; &quot;\n\t&quot;
-          &quot;bld r0, 1&quot; &quot;\n\t&quot;
-          &quot;out %[port], r0&quot; &quot;\n\t&quot;
-          :
-          : [pin] &quot;I&quot; (_SFR_IO_ADDR(PIND)),
-            [port] &quot;I&quot; (_SFR_IO_ADDR(PORTD))
-          : &quot;r0&quot;
-      );
-  }
-}
-</code></pre>
+<h2 id="como-configurar">Como configurar?</h2>
+<p>Existem duas formas de configurar o sensor: pelo <a href="https://luisf18.github.io/FoxLink_web_tool/"><strong>FoxLink WebTool</strong></a> ou pelo modo <strong>Shell</strong>.</p>
+<p>Antes de começar, é necessário ter um <strong>FoxLink</strong>, que é a placa responsável por conectar o sensor ao computador.
+Veja mais em: <a href="../../../foxlink"><strong>FoxLink</strong></a></p>
+<p>O <a href="https://luisf18.github.io/FoxLink_web_tool/"><strong>FoxLink WebTool</strong></a> é uma ferramenta gráfica que roda no navegador e permite configurar o sensor e visualizar sua leitura em tempo real.</p>
+<p>Já o modo <strong>Shell</strong> utiliza comandos de texto para realizar as mesmas operações, sem interface gráfica. Ele pode ser usado em qualquer software de comunicação serial, como <strong>Arduino IDE</strong> (Serial Monitor), <strong>Putty</strong> ou <a href="https://luisf18.github.io/FoxLink_web_tool/serial.html"><strong>Fox Serial</strong></a>.</p>
 <h3 id="circuito">Circuito</h3>
-<p><img alt="circuito com fox-link" src="../foxlink.png" /></p>
-<h3 id="ferramentas-para-configurar">Ferramentas para configurar</h3>
-<p>Atualmente existe as seguintes opções:</p>
-<ul>
-<li>Arduino IDE com Serial monitor ou outro. Usando comandos de texto.</li>
-<li><code>foxwire cli</code> Comandos via foxwire usando cli python (<a href="https://pypi.org/project/foxwire/">instale usando pip</a>).</li>
-<li><code>foxwire webtool</code> configuração de forma gráfica e simples. <em>Mais recomendado!</em></li>
-</ul>
-<h2 id="configuracao-no-foxwire-webtool">Configuração no Foxwire WebTool</h2>
+<p><img alt="circuito com fox-link" src="foxlink.png" /></p>
+<!--
+### Ferramentas para configurar
+
+Atualmente existe as seguintes opções:
+
+* Arduino IDE com Serial monitor ou outro. Usando comandos de texto.
+* `foxwire cli` Comandos via foxwire usando cli python ([instale usando pip](https://pypi.org/project/foxwire/)).
+* `foxwire webtool` configuração de forma gráfica e simples. *Mais recomendado!*
+-->
+
+<h2 id="configuracao-com-foxlink-webtool">Configuração com FoxLink WebTool</h2>
 <p><a href="https://luisf18.github.io/FoxLink_web_tool/">FoxLink Webtool</a></p>
 <ol>
 <li>Clique em conectar e escolha a porta COM</li>
 <li>Clique em scan, ele irá scanear os dispositivos conectados</li>
 <li>Irá aparecer um card como o da imagem abaixo onde é possivel visualizar e alterar as configureções.</li>
 </ol>
-<p><img alt="webtool" src="../webtool.png" /></p>
+<p><img alt="webtool" src="webtool.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../fxs50/FXS50/" class="btn btn-neutral float-right" title="FX-S50">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fxs50/" class="btn btn-neutral float-right" title="FX-S50">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -471,18 +467,18 @@ int main() {
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../fxs50/FXS50/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../fxs50/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../../..";</script>
-    <script src="../../../js/theme_extra.js"></script>
-    <script src="../../../js/theme.js"></script>
-      <script src="../../../search/main.js"></script>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

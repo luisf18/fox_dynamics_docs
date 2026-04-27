@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Shell - Fox Dynamics</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Shell";
+        var mkdocs_page_input_path = "communication\\Shell\\index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Fox Dynamics
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensores</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/IrKey/">IR-Key</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/fxs50/">FX-S50</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/fxs200/">FX-S200</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/linha/">Linha</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ESC</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../escs/esc_brushed_duplo/">ESCs Brushed Duplo</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">controladoras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../controladoras/FoxMini_ESP32/FoxMini/">FoxMini-ESP32</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Outros</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outros/chaves_combate/">Chave para Combate</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxLink</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../foxlink/">Home</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../foxwire/">FoxWire</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Shell</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#conexao">🔌 Conexão</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iniciando-e-utilizando-o-modo-shell">Iniciando e utilizando o modo Shell</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comandos">Comandos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inicializacao-condicional-redes-com-multiplos-dispositivos">Inicialização condicional (Redes com multiplos dispositivos)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#importante">⚠️ Importante</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplo">Exemplo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shell-com-arduino-ide">Shell com Arduino IDE</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shell-com-fox-serial">Shell com Fox Serial</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Fox Dynamics</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">FoxWire e Shell</li>
+      <li class="breadcrumb-item active">Shell</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="shell">Shell</h1>
+<p>O modo <strong>Shell</strong> permite realizar leituras e configurações através de comandos de texto.
+Ele pode ser utilizado em qualquer aplicativo de comunicação serial, como:</p>
+<ul>
+<li><strong>Arduino IDE</strong> (Serial Monitor)</li>
+<li><strong>Putty</strong></li>
+<li><a href="https://luisf18.github.io/FoxLink_web_tool/serial.html"><strong>Fox Serial</strong></a></li>
+</ul>
+<hr />
+<h2 id="conexao">🔌 Conexão</h2>
+<p>Para conectar um dispositivo ao computador, é necessário utilizar um <strong>FoxLink</strong>.
+Veja mais detalhes em: <a href="../../../foxlink"><strong>FoxLink</strong></a></p>
+<hr />
+<h2 id="iniciando-e-utilizando-o-modo-shell">Iniciando e utilizando o modo Shell</h2>
+<ol>
+<li>
+<p>Conecte o dispositivo ao computador usando um <strong>FoxLink</strong></p>
+</li>
+<li>
+<p>Abra um software de comunicação serial (Arduino IDE, Putty ou Fox Serial)</p>
+</li>
+<li>
+<p>Selecione a porta COM do FoxLink</p>
+</li>
+<li>
+<p>Configure:</p>
+</li>
+<li>
+<p>Baudrate: <strong>115200</strong></p>
+</li>
+<li>
+<p>Final de linha: <strong>NL + CR</strong></p>
+</li>
+<li>
+<p>Envie o comando:</p>
+</li>
+</ol>
+<pre><code>FOX-SHELL
+</code></pre>
+<p>O dispositivo deve responder com:</p>
+<pre><code>FOX-SHELL-INIT!
+</code></pre>
+<ol>
+<li>
+<p>Após a inicialização, utilize:</p>
+</li>
+<li>
+<p><code>help</code> — para listar os comandos disponíveis</p>
+</li>
+<li>
+<p><code>dump</code> — para visualizar as configurações atuais</p>
+</li>
+<li>
+<p>⚠️ <strong>Antes de sair, salve as alterações:</strong></p>
+</li>
+</ol>
+<pre><code>save
+</code></pre>
+<ol>
+<li>Finalize o modo Shell com:</li>
+</ol>
+<pre><code>exit
+</code></pre>
+<hr />
+<h2 id="comandos">Comandos</h2>
+<p>A lista de comandos varia de acordo com cada dispositivo, mas todos possuem os comandos básicos abaixo:</p>
+<ul>
+<li><code>FOX-SHELL</code> — inicia o modo Shell</li>
+<li><code>help</code> — lista os comandos disponíveis</li>
+<li><code>exit</code> — encerra o shell</li>
+<li><code>dump</code> — exibe as principais configurações</li>
+<li><code>reset</code> — reinicia o dispositivo</li>
+<li><code>uuid</code> — lê o identificador único</li>
+<li><code>save</code> — salva as alterações realizadas</li>
+<li><code>address</code> — lê ou altera o endereço <strong>FoxWire</strong></li>
+<li><code>register</code> — lê ou escreve um registrador de 8 bits</li>
+<li><code>vcc</code> — mede a tensão interna</li>
+<li><code>restore</code> — restaura configurações de fábrica</li>
+<li><code>restore_keep_addr</code> — restaura sem alterar o endereço</li>
+</ul>
+<hr />
+<h2 id="inicializacao-condicional-redes-com-multiplos-dispositivos">Inicialização condicional (Redes com multiplos dispositivos)</h2>
+<p>Em redes com múltiplos dispositivos, é necessário especificar com qual dispositivo deseja se comunicar.</p>
+<p>Por padrão, o comando:</p>
+<pre><code>FOX-SHELL
+</code></pre>
+<p>inicia <strong>todos os dispositivos na linha</strong>.
+Isso só é seguro quando há <strong>apenas um dispositivo conectado</strong> — caso contrário, podem ocorrer conflitos de comunicação.</p>
+<p>Para resolver isso, utilize os modos de <strong>inicialização condicional</strong>:</p>
+<ul>
+<li><code>FOX-SHELL</code> — inicia todos os dispositivos (<strong>usar apenas com um dispositivo</strong>)</li>
+<li><code>FOX-SHELL-&lt;ADDR&gt;</code> — inicia um dispositivo específico pelo endereço</li>
+<li><code>FOX-SHELL-IF</code> — inicia apenas o dispositivo que atende a uma condição específica</li>
+<li><code>FOX-SHELL-UNLOCK</code> — desbloqueia os dispositivos para permitir nova comunicação</li>
+</ul>
+<hr />
+<h3 id="importante">⚠️ Importante</h3>
+<ul>
+<li>O modo <strong>Shell</strong> permite comunicação com <strong>um dispositivo por vez</strong>.</li>
+<li>Em redes com múltiplos dispositivos, utilize sempre a inicialização condicional para evitar conflitos.</li>
+<li>Para configurar vários dispositivos simultaneamente, utilize o <strong>FoxLink WebTool</strong>.</li>
+</ul>
+<hr />
+<h3 id="exemplo">Exemplo</h3>
+<pre><code class="language-text">FOX-SHELL-0
+&lt;comandos&gt;
+exit
+FOX-SHELL-UNLOCK
+FOX-SHELL-1
+&lt;comandos&gt;
+exit
+</code></pre>
+<hr />
+<h2 id="shell-com-arduino-ide">Shell com Arduino IDE</h2>
+<p><img alt="Monitor" src="shell_serial_monitor_1.png" /></p>
+<p><img alt="Monitor" src="shell_serial_monitor_2.png" /></p>
+<p><img alt="Monitor" src="shell_serial_monitor_3.png" /></p>
+<p><img alt="Monitor" src="shell_serial_monitor_4.png" /></p>
+<hr />
+<h2 id="shell-com-fox-serial">Shell com Fox Serial</h2>
+<p>1. Acesse:
+   <a href="https://luisf18.github.io/FoxLink_web_tool/serial.html">https://luisf18.github.io/FoxLink_web_tool/serial.html</a></p>
+<p>2. Clique em conectar</p>
+<p align="center">
+  <img src="fox_serial_1.png" width="400">
+</p>
+
+<p>3. Escolha a serial do <strong>FoxLink</strong></p>
+<p align="center">
+  <img src="fox_serial_2.png" width="400">
+</p>
+
+<p>4. Clique em <strong>FOX-SHELL</strong> ou digite o comando manualmente</p>
+<p align="center">
+  <img src="fox_serial_3.png" width="400">
+</p>
+
+<!--
+# Shell
+
+O modo shell modo **Shell** utiliza comandos de texto para realizar leituras e configurações, rodando em qualquer aplicativo de comunicação serial, como **Arduino IDE** com Serial monitor, **Putty** ou [**Fox Serial**](https://luisf18.github.io/FoxLink_web_tool/serial.html).
+
+A lista de comandos depende de cada dispositivo. No entanto, existem [comandos comuns a todos](#comandos-comuns-a-todos-os-dispositivos).
+
+Para conectar um dispositivo ao computador é preciso de ter um **FoxLink** acesse para mais informações [**FoxLink**](../../../foxlink).
+
+Para iniciar o modo shell envie **"FOX-SHELL"**. ele deve responder com **"FOX-SHELL INIT!"**.Em seguida digite os comandos que desejar.
+
+⚠️ **IMPORTANTE:**  
+1. O modo **Shell** só funciona com um dispositivo conectado ao **FoxLink** por vez. (para configurar varios simultaneamente use **FoxLink WebTool**).  
+2. Ao terminar de configurar envie o comando **"save"** para salvar as alterações, caso contrário, ao desligar as alterações são perdidas!  
+
+## Comandos comuns a todos os dispositivos
+
+Todos os dispositivos Fox posssuem os comandos a seguir.
+
+* `FOX-SHELL` inica o modo Shell
+* `help` lista os comandos disponíveis
+* `exit` encerra o shell
+* `dump` lista as principais configurações
+* `reset` reinicia o dispositivo
+* `uuid` lê o id único
+* `save` salva as alterações realizadas
+* `address` lê ou altera o endereço **FoxWire** do dispositivo
+* `register` lê ou escreve um registrador de 8 bits
+* `vcc` mede a tensão interna
+* `restore` restaura as configurações de fábrica
+* `restore_keep_addr` restaura as configurações de fábrica sem alterar o endereço
+
+### Inicialização condicinal
+
+Como o shell é executado em uma linha que pode possuir diversos dispositivos ligados em paralelo, é preciso especificar com qual dispositivo deseja se comunicar. O comando **FOX-SHELL** inicia todos na linha, se houver mais de um dispositivo isso irá causar erros. A **inicialização condicional** é um recurso que ajuda a distinguir o dispositivo destino. A seguir os comando de inicialização e suas diferenças.
+
+* `FOX-SHELL` inicia todos os dispositivos em modo shell (só pode ser feito quando só tem um dispositivo!)
+* `FOX-SHELL-<ADDR>`  inicia o dispositivo com o endereço correspondente
+* `FOX-SHELL-IF` inicia apenas o dispositivo que atende a uma condição especifica. Por exemplo, no sensor FXS50, a condição é ter um obstaculo na frente. Portanto, para acionar apenas um dispositivo com endereço indefinido coloque um obstaculo na frente de um unico sensor e execute este comando.
+* `FOX-SHELL-UNLOCK` Os dispositivos na linha que não são iniciados entram em modo de espera. Para iniciar comunicação posteriormente com outro dispositivo é preciso sair e executar esse comando.
+
+**Exemplo:**
+
+Iniciando Shell no dispositivo 0, saindo e depois iniciando o 1 em uma rede com 2 ou mais dispositivos:
+
+1. `FOX-SHELL-0` (inicia 0 e bloqueia os outros)
+2. "comandos..."
+3. `exit` (encerra 0)
+4. `FOX-SHELL-UNLOCK` (desbloqueia todos)
+5. `FOX-SHELL-1` (inicia 1 e bloqueia os outros)
+6. "comandos..."
+7. `exit`
+
+## Passo a passo
+
+1. Conecte o dispositivo ao computador usando um **FoxLink**;  
+2. Abra algum aplicativo de comunicação Serial, como **Arduino IDE** + **Serial monitor**, **Putty** ou [**Fox Serial**](https://luisf18.github.io/FoxLink_web_tool/serial.html);  
+3. Selecione a COM do  **FoxLink**;  
+4. Configure o baudrate para 115200 e "\n"+"\r" ao final ou "NL & CR" (no Arduino);  
+5. Envie **"FOX-SHELL"** para o sensor entrar no modo Shell. O sensor irá responder enviando **"FOX-SHELL-INIT!"**.  
+6. Com o modo Shell iniciado você pode configurar o sensor ou realizar medições. Digite o comando "help" para exibir a lista de comandos disponiveis.  
+7. O comando "dump" exibe os valores de configuração do sensor.  
+8. Ao terminar feche o shell usando `exit`.  
+
+
+## Arduino IDE
+
+![Monitor](shell_serial_monitor_1.png)
+
+![Monitor](shell_serial_monitor_2.png)
+
+![Monitor](shell_serial_monitor_3.png)
+
+![Monitor](shell_serial_monitor_4.png)
+
+## Fox Serial
+
+1. Acesse [https://luisf18.github.io/FoxLink_web_tool/serial.html](https://luisf18.github.io/FoxLink_web_tool/serial.html).  
+
+2. Clique em conectar  
+<p><img src="fox_serial_1.png"></p>
+
+
+3. Escolha a serial do **FoxLink**  
+<p><img src="fox_serial_2.png"></p>
+
+
+4. Clique no botão **FOX-SHELL** ou digite **FOX-SHELL** e envie clicando enter. Ele deve responder com **FOX-SHELL-INIT**
+<p><img src="fox_serial_3.png"></p>
+
+-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../foxwire/" class="btn btn-neutral float-left" title="FoxWire"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../foxwire/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
