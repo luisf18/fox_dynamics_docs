@@ -16,9 +16,9 @@
 
 ## Controladoras
 
-|   [![.](images/FoxMini.png)](controladoras/FoxMini_ESP32) | ![.](images/BBRX-FS.png) |
-|:----:|:--------:|
-|  [FoxMini-ESP32](controladoras/FoxMini_ESP32)  |  BBRX-FS  |
+| [<img src="images/FoxMini.png" width="500">](controladoras/FoxMini_ESP32) | [<img src="controladoras/FoxNanoV0/top.png" width="500">](controladoras/FoxNanoV0) | <img src="images/BBRX-FS.png" width="320"> |
+|:----:|:--------:|:--------:|
+|  [FoxMini-ESP32](controladoras/FoxMini_ESP32)  |  [FoxNann V0](controladoras/FoxNanoV0) |  BBRX-FS  |
 
 ## Chaves gerais para combate
 
