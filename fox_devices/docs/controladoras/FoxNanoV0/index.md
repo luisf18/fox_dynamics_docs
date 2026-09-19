@@ -1,6 +1,6 @@
 # Fox Nano V0
 
-Placa compacta totalmente compativel com Arduino Nano só que com suporte pra display OLED, medição de VIN e Receptor IR integrados. Com ela é possivel fazer uma interface homem maquina (IHM) completa, usando o display como saida e a recepção IR como entrada, onde o ususário pode inserir valores e dar comandos usando um controle remoto IR. Ela também é especialente interessante pra projetos de seguidores de linha e Mini Sumo.
+Placa compacta totalmente compativel com Arduino Nano só que com suporte para display OLED, medição de VIN e receptor IR integrados. Com ela é possivel fazer uma interface homem máquina (IHM) completa, usando o display como saida e o receptor IR como entrada. O ususário pode inserir valores e dar comandos usando um controle remoto IR, enquanto visualiza valores no display. Ela também é especialente interessante para projetos de seguidores de linha e Mini Sumo.
 
 ![banner](FoxNanoV0_banner.png)
 
@@ -25,7 +25,7 @@ Placa compacta totalmente compativel com Arduino Nano só que com suporte pra di
 
 ## Programação usando Arduino
 
-A `FoxNano` é totalmente compativel com o Arduino nano, por isso ele pode ser programada selecionando a placa `Arduino nano` na IDE do Arduino. Todos os exemplos para Arduino nano irão Funciona com a `FoxNano`.
+A `FoxNano` é totalmente compativel com o Arduino nano, por isso ele pode ser programada selecionando a placa `Arduino nano` na IDE do Arduino. Todos os exemplos para Arduino nano irão funcionar com a `FoxNano`.
 
 ![Conectando Arduino](./Arduino.png)
 
@@ -41,7 +41,7 @@ Jumper IR
 
 ## Medição de Tensão de VIN
 
-A `FoxNano` possui um divisor de tensão conectado ao pino de alimentação externa `VIN`. A saida do divisor pode ser conectado ao pino A7 para medição de tensão. O divisor é composto por um resistor de 100 Kohms conectado de `VIN` pra `V_SENSE` e outro de 33 Kohms de `V_SENSE` para `GND`.
+A `FoxNano` possui um divisor de tensão conectado ao pino de alimentação externa `VIN`. A saida do divisor pode ser conectado ao pino A7 para medição de tensão. O divisor é composto por um resistor de 100 Kohms conectado de `VIN` para `V_SENSE` e outro de 33 Kohms de `V_SENSE` para `GND`.
 
 Formula: 
 
@@ -75,9 +75,9 @@ Os pinos A4 (SDA) e A5 (SCL) podem ser desconectados da saida I2C disoldando os 
 
 ![Jumper A4 A5](./JumpA4A5.png)
 
-### Outras possibilidade para saida I2C
+### Outras possibilidades para a saida I2C
 
-Os pinos podem ser usado pra outras funções como conectar um servo ou sensor analogico. Na imagem abaixo um exemplo usamdo um servo.
+Os pinos podem ser usado para outras funções como conectar um servo ou sensores. Na imagem abaixo um exemplo usando um servo.
 
 ![servo](./servo.png)
 
