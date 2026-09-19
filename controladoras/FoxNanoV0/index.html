@@ -82,7 +82,7 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#jumpers-a4-e-a5">Jumpers A4 e A5</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#outras-possibilidade-para-saida-i2c">Outras possibilidade para saida I2C</a>
+    <li class="toctree-l3"><a class="reference internal" href="#outras-possibilidades-para-a-saida-i2c">Outras possibilidades para a saida I2C</a>
     </li>
         </ul>
     </li>
@@ -140,7 +140,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="fox-nano-v0">Fox Nano V0</h1>
-<p>Placa compacta totalmente compativel com Arduino Nano só que com suporte pra display OLED, medição de VIN e Receptor IR integrados. Com ela é possivel fazer uma interface homem maquina (IHM) completa, usando o display como saida e a recepção IR como entrada, onde o ususário pode inserir valores e dar comandos usando um controle remoto IR. Ela também é especialente interessante pra projetos de seguidores de linha e Mini Sumo.</p>
+<p>Placa compacta totalmente compativel com Arduino Nano só que com suporte para display OLED, medição de VIN e receptor IR integrados. Com ela é possivel fazer uma interface homem máquina (IHM) completa, usando o display como saida e o receptor IR como entrada. O ususário pode inserir valores e dar comandos usando um controle remoto IR, enquanto visualiza valores no display. Ela também é especialente interessante para projetos de seguidores de linha e Mini Sumo.</p>
 <p><img alt="banner" src="FoxNanoV0_banner.png" /></p>
 <h2 id="pinout">Pinout</h2>
 <p><img alt="pinout" src="FoxNanoV0.png" /></p>
@@ -179,7 +179,7 @@
 <h2 id="medidas">Medidas</h2>
 <p><img alt="medidas" src="medidas.png" /></p>
 <h2 id="programacao-usando-arduino">Programação usando Arduino</h2>
-<p>A <code>FoxNano</code> é totalmente compativel com o Arduino nano, por isso ele pode ser programada selecionando a placa <code>Arduino nano</code> na IDE do Arduino. Todos os exemplos para Arduino nano irão Funciona com a <code>FoxNano</code>.</p>
+<p>A <code>FoxNano</code> é totalmente compativel com o Arduino nano, por isso ele pode ser programada selecionando a placa <code>Arduino nano</code> na IDE do Arduino. Todos os exemplos para Arduino nano irão funcionar com a <code>FoxNano</code>.</p>
 <p><img alt="Conectando Arduino" src="Arduino.png" /></p>
 <h2 id="receptor-ir">Receptor IR</h2>
 <p>A <code>FoxNano</code> possui um receptor IR que pode ser soldado ao pino D2, D8 ou até deixar desconectado. A seleção é feita no jumper <code>IR</code> conforme a legenda.</p>
@@ -187,7 +187,7 @@
 <p>Jumper IR</p>
 <p><img alt="Jumper IR" src="Jumper_IR.png" /></p>
 <h2 id="medicao-de-tensao-de-vin">Medição de Tensão de VIN</h2>
-<p>A <code>FoxNano</code> possui um divisor de tensão conectado ao pino de alimentação externa <code>VIN</code>. A saida do divisor pode ser conectado ao pino A7 para medição de tensão. O divisor é composto por um resistor de 100 Kohms conectado de <code>VIN</code> pra <code>V_SENSE</code> e outro de 33 Kohms de <code>V_SENSE</code> para <code>GND</code>.</p>
+<p>A <code>FoxNano</code> possui um divisor de tensão conectado ao pino de alimentação externa <code>VIN</code>. A saida do divisor pode ser conectado ao pino A7 para medição de tensão. O divisor é composto por um resistor de 100 Kohms conectado de <code>VIN</code> para <code>V_SENSE</code> e outro de 33 Kohms de <code>V_SENSE</code> para <code>GND</code>.</p>
 <p>Formula: </p>
 <pre><code>V_SENSER = VIN * 33/133
 </code></pre>
@@ -205,8 +205,8 @@
 <h3 id="jumpers-a4-e-a5">Jumpers A4 e A5</h3>
 <p>Os pinos A4 (SDA) e A5 (SCL) podem ser desconectados da saida I2C disoldando os jumpers de solda <code>A4</code> e <code>A5</code> no verso da placa. Isso é util quando o OLED está soldado mas é preciso usar a placa em algum projeto que use os pinos A4 e A5 para outras funções, assim, não será possivel usar o OLED mas não precisa disoldar ele.</p>
 <p><img alt="Jumper A4 A5" src="JumpA4A5.png" /></p>
-<h3 id="outras-possibilidade-para-saida-i2c">Outras possibilidade para saida I2C</h3>
-<p>Os pinos podem ser usado pra outras funções como conectar um servo ou sensor analogico. Na imagem abaixo um exemplo usamdo um servo.</p>
+<h3 id="outras-possibilidades-para-a-saida-i2c">Outras possibilidades para a saida I2C</h3>
+<p>Os pinos podem ser usado para outras funções como conectar um servo ou sensores. Na imagem abaixo um exemplo usando um servo.</p>
 <p><img alt="servo" src="servo.png" /></p>
 <p>Também é possivel conectar um display OLED maior.</p>
 <p><img alt="big oled" src="big_oled.png" /></p>
