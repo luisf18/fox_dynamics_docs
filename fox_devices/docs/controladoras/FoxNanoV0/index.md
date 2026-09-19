@@ -2,12 +2,12 @@
 
 Placa compacta totalmente compativel com Arduino Nano só que com suporte pra display OLED, medição de VIN e Receptor IR integrados. Com ela é possivel fazer uma interface homem maquina (IHM) completa, usando o display como saida e a recepção IR como entrada, onde o ususário pode inserir valores e dar comandos usando um controle remoto IR. Ela também é especialente interessante pra projetos de seguidores de linha e Mini Sumo.
 
-![.](FoxNanoV0_banner.png)
+![banner](FoxNanoV0_banner.png)
 
 ## Pinout
-![.](FoxNanoV0.png)
+![pinout](FoxNanoV0.png)
 
-![](./top_legendado.png)
+![top_legendado](./top_legendado.png)
 
 ## Caracteristicas
 
