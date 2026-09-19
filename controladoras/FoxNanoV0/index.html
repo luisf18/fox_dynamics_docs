@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Chave para Combate - Fox Dynamics</title>
+    <title>FoxNano V0 - Fox Dynamics</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Chave para Combate";
-        var mkdocs_page_input_path = "outros\\chaves_combate.md";
+        var mkdocs_page_name = "FoxNano V0";
+        var mkdocs_page_input_path = "controladoras\\FoxNanoV0\\index.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -61,19 +61,37 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">controladoras</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../controladoras/FoxMini_ESP32/">FoxMini-ESP32</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../FoxMini_ESP32/">FoxMini-ESP32</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../controladoras/FoxNanoV0/">FoxNano V0</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">FoxNano V0</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pinout">Pinout</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristicas">Caracteristicas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#medidas">Medidas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#programacao-usando-arduino">Programação usando Arduino</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#receptor-ir">Receptor IR</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#medicao-de-tensao-de-vin">Medição de Tensão de VIN</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#saida-i2c-e-display-oled">Saida I2C e Display OLED</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#jumpers-a4-e-a5">Jumpers A4 e A5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#outras-possibilidade-para-saida-i2c">Outras possibilidade para saida I2C</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Outros</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Chave para Combate</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#caracteristica-tecnicas">Caracteristica técnicas</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outros/chaves_combate/">Chave para Combate</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">FoxLink</span></p>
@@ -111,8 +129,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Outros</li>
-      <li class="breadcrumb-item active">Chave para Combate</li>
+          <li class="breadcrumb-item">controladoras</li>
+      <li class="breadcrumb-item active">FoxNano V0</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -121,61 +139,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="chaves-gerais-para-combate">Chaves gerais para combate</h1>
-<p>Chaves Gerais para combate de robôs insetos. </p>
-<p><img alt="Alt text" src="../chaves.png" /></p>
-<h2 id="caracteristica-tecnicas">Caracteristica técnicas</h2>
+                <h1 id="fox-nano-v0">Fox Nano V0</h1>
+<p>Placa compacta totalmente compativel com Arduino Nano só que com suporte pra display OLED, medição de VIN e Receptor IR integrados. Com ela é possivel fazer uma interface homem maquina (IHM) completa, usando o display como saida e a recepção IR como entrada, onde o ususário pode inserir valores e dar comandos usando um controle remoto IR. Ela também é especialente interessante pra projetos de seguidores de linha e Mini Sumo.</p>
+<p><img alt="." src="FoxNanoV0_banner.png" /></p>
+<h2 id="pinout">Pinout</h2>
+<p><img alt="." src="FoxNanoV0.png" /></p>
+<p><img alt="" src="top_legendado.png" /></p>
+<h2 id="caracteristicas">Caracteristicas</h2>
 <table>
 <thead>
 <tr>
-<th>Característica</th>
-<th>Chave com LED</th>
-<th>Micro Chave</th>
+<th>Parametro</th>
+<th>valor</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cores</td>
-<td>Verde, Azul e Vermelho</td>
-<td>-</td>
+<td>Medidas</td>
+<td>45,2 x 28,7 mm</td>
 </tr>
 <tr>
-<td>Tensão de operação</td>
-<td>3 a 21V</td>
-<td>-</td>
+<td>Medidas + USB</td>
+<td>46,2 x 28,7 mm</td>
 </tr>
 <tr>
-<td>Resistência</td>
-<td>5,7 mΩ</td>
-<td>13 mΩ</td>
+<td>Alimentação</td>
+<td>6 a 12V</td>
 </tr>
 <tr>
-<td>Dimensões</td>
-<td>16,2 x 12,9 mm</td>
-<td>8,1 x 12,2 mm</td>
+<td>Peso sem OLED</td>
+<td>3,5g</td>
 </tr>
 <tr>
-<td>Altura</td>
-<td>7,5 mm</td>
-<td>7,5 mm</td>
-</tr>
-<tr>
-<td>Peso</td>
-<td>1,2 g</td>
-<td>1,0 g</td>
+<td>Peso com OLED</td>
+<td>6,0g</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<p align="center">
-  <img src="..\..\..\LogoFox.png" width="200px">
-</p>
+<h2 id="medidas">Medidas</h2>
+<p><img alt="medidas" src="medidas.png" /></p>
+<h2 id="programacao-usando-arduino">Programação usando Arduino</h2>
+<p>A <code>FoxNano</code> é totalmente compativel com o Arduino nano, por isso ele pode ser programada selecionando a placa <code>Arduino nano</code> na IDE do Arduino. Todos os exemplos para Arduino nano irão Funciona com a <code>FoxNano</code>.</p>
+<p><img alt="Conectando Arduino" src="Arduino.png" /></p>
+<h2 id="receptor-ir">Receptor IR</h2>
+<p>A <code>FoxNano</code> possui um receptor IR que pode ser soldado ao pino D2, D8 ou até deixar desconectado. A seleção é feita no jumper <code>IR</code> conforme a legenda.</p>
+<p><img alt="Jumper IR" src="IR.png" /></p>
+<p>Jumper IR</p>
+<p><img alt="Jumper IR" src="Jumper_IR.png" /></p>
+<h2 id="medicao-de-tensao-de-vin">Medição de Tensão de VIN</h2>
+<p>A <code>FoxNano</code> possui um divisor de tensão conectado ao pino de alimentação externa <code>VIN</code>. A saida do divisor pode ser conectado ao pino A7 para medição de tensão. O divisor é composto por um resistor de 100 Kohms conectado de <code>VIN</code> pra <code>V_SENSE</code> e outro de 33 Kohms de <code>V_SENSE</code> para <code>GND</code>.</p>
+<p>Formula: </p>
+<pre><code>V_SENSER = VIN * 33/133
+</code></pre>
+<p>No código pode ser lido usando a função abaixo: </p>
+<pre><code class="language-c">float readVin(){
+    return analogRead(A7)*(5.0/1024.0)*(133.0/33.0);
+}
+</code></pre>
+<p>Jumper:</p>
+<p><img alt="oled" src="jumper_vin.png" /></p>
+<h2 id="saida-i2c-e-display-oled">Saida I2C e Display OLED</h2>
+<p>A <code>FoxNano</code> possui uma saida I2C conectada aos pinos A4 e A5. Nela é possivel conectar um display OLED.</p>
+<p><img alt="Jumper A4 A5" src="saida_i2c.png" /></p>
+<p><img alt="oled" src="oled.png" /></p>
+<h3 id="jumpers-a4-e-a5">Jumpers A4 e A5</h3>
+<p>Os pinos A4 (SDA) e A5 (SCL) podem ser desconectados da saida I2C disoldando os jumpers de solda <code>A4</code> e <code>A5</code> no verso da placa. Isso é util quando o OLED está soldado mas é preciso usar a placa em algum projeto que use os pinos A4 e A5 para outras funções, assim, não será possivel usar o OLED mas não precisa disoldar ele.</p>
+<p><img alt="Jumper A4 A5" src="JumpA4A5.png" /></p>
+<h3 id="outras-possibilidade-para-saida-i2c">Outras possibilidade para saida I2C</h3>
+<p>Os pinos podem ser usado pra outras funções como conectar um servo ou sensor analogico. Na imagem abaixo um exemplo usamdo um servo.</p>
+<p><img alt="servo" src="servo.png" /></p>
+<p>Também é possivel conectar um display OLED maior.</p>
+<p><img alt="big oled" src="big_oled.png" /></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../controladoras/FoxNanoV0/" class="btn btn-neutral float-left" title="FoxNano V0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../foxlink/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FoxMini_ESP32/" class="btn btn-neutral float-left" title="FoxMini-ESP32"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../outros/chaves_combate/" class="btn btn-neutral float-right" title="Chave para Combate">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -198,10 +238,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../controladoras/FoxNanoV0/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../FoxMini_ESP32/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../foxlink/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../outros/chaves_combate/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

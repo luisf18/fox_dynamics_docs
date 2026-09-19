@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Serial Monitor - Fox Dynamics</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Serial Monitor";
+        var mkdocs_page_input_path = "tools\\SerialMonitor\\index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Fox Dynamics
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensores</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/IrKey/">IR-Key</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/fxs50/">FX-S50</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/fxs200/">FX-S200</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Sensores/linha/">Linha</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ESC</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../escs/esc_brushed_duplo/">ESCs Brushed Duplo</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">controladoras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../controladoras/FoxMini_ESP32/">FoxMini-ESP32</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../controladoras/FoxNanoV0/">FoxNano V0</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Outros</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../outros/chaves_combate/">Chave para Combate</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxLink</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../foxlink/">Home</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FoxWire e Shell</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/">Home</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/foxwire/">FoxWire</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../communication/Shell/">Shell</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ferramentas</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Home</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Serial Monitor</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#por-que-um-serial-monitor-web">Por que um Serial Monitor Web?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conexao">Conexão</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interface">Interface</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#botoes-e-seletores">Botões e seletores</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#envio-de-texto">Envio de texto</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modo-de-exibicao-hexadecimal-hex">Modo de exibição Hexadecimal HEX</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modo-de-entrada-numerica-bin">Modo de entrada numérica BIN</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Fox Dynamics</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Ferramentas</li>
+      <li class="breadcrumb-item active">Serial Monitor</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="serial-monitor">Serial Monitor</h1>
+<p>🔗 <a href="https://luisf18.github.io/FoxLink_web_tool/serial.html">Serial Monito Web</a></p>
+<p>Inspirado no Serial Monitor da IDE do Arduino, o <strong>Serial Monitor Web</strong> é uma ferramenta para comunicação serial que funciona diretamente no navegador, sem precisar instalar uma IDE ou qualquer outro software.</p>
+<p>A ideia é simples: <strong>abrir o navegador, conectar a placa e começar a testar</strong>.</p>
+<p>Além das funções tradicionais de um Serial Monitor, ele possui alguns recursos voltados especialmente para testes e debug de comunicação UART, incluindo envio de bytes em modo binário e visualização em hexadecimal.</p>
+<p><img alt="Serial Monitor Web" src="hex.png" /></p>
+<h2 id="por-que-um-serial-monitor-web">Por que um Serial Monitor Web?</h2>
+<p>O Serial Monitor da IDE do Arduino é muito útil para monitorar dados e fazer debug de projetos com Arduino, ESP32 e outros microcontroladores.</p>
+<p>Porém, para um teste rápido, abrir uma IDE completa pode ser desnecessário. E quando a IDE não está instalada, é preciso instalar todo o ambiente apenas para fazer uma comunicação serial simples.</p>
+<p>O Serial Monitor Web foi criado para resolver justamente esse problema:</p>
+<blockquote>
+<p><strong>Abriu o navegador, conectou a placa e pronto.</strong></p>
+</blockquote>
+<!--Não é necessário instalar uma IDE, driver específico da ferramenta ou outro programa para começar a utilizar o monitor.-->
+
+<h2 id="conexao">Conexão</h2>
+<p>Ao abrir a ferramenta, selecione a porta serial correspondente à placa.</p>
+<p>Depois de conectar, a comunicação pode ser utilizada normalmente para receber e enviar dados.</p>
+<p>O monitor pode ser utilizado com diferentes dispositivos que disponibilizem uma interface serial, como:</p>
+<ul>
+<li>Arduino</li>
+<li>ESP32</li>
+<li>Conversores USB-Serial</li>
+<li>Outros microcontroladores com comunicação UART</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p><img alt="Serial Monitor Web" src="legendado.png" /></p>
+<p>A interface é dividida em três partes principais:</p>
+<ul>
+<li><strong>Conexão e saída serial:</strong> seleção da porta e área onde os dados recebidos são exibidos.</li>
+<li><strong>Controles:</strong> opções para alterar a forma como os dados são apresentados e controlar a comunicação.</li>
+<li><strong>Entrada:</strong> campo utilizado para enviar dados para a placa.</li>
+</ul>
+<h2 id="botoes-e-seletores">Botões e seletores</h2>
+<ul>
+<li><strong><code>Save</code></strong> salva em <code>.txt</code> a saida.</li>
+<li><strong><code>RST</code></strong> executa o reset fisico do dispositivo conectado se tiver suporte para isso.Funciona por exemplo com Arduino UNO, Nano e ESP32.</li>
+<li><strong><code>HEX</code></strong> Modo de exibição em hexadecimal.</li>
+<li><strong><code>TX</code></strong> Habilita a impressão dos dados enviados. quando esta habilitado eles são identificados como: <code>[TX]&lt;...&gt;</code> e as recepções passam a ser 
+<code>[RX]&lt;...&gt;</code>.</li>
+<li>
+<p><strong><code>AutoRoll</code></strong> Habilita a rolagem automatica a medida que os dados são enviados ou recebidos.</p>
+</li>
+<li>
+<p><strong><code>Clear</code></strong> Limpa a saida.</p>
+</li>
+<li>
+<p><strong><code>Caracteres de fim</code></strong> Seleção dos caracteres de encerramento que serão adicionados ao final da entrada.</p>
+</li>
+<li>
+<p><strong><code>BIN</code></strong> Modo de entrada numérico.</p>
+</li>
+</ul>
+<h2 id="envio-de-texto">Envio de texto</h2>
+<p>O modo padrão permite enviar texto para a porta serial.</p>
+<p><img alt="Serial Monitor Web" src="livre.png" /></p>
+<!--
+Por exemplo:
+
+<pre><code class="language-text">Serial Monitor no navegador!
+</code></pre>
+
+-->
+
+<h2 id="modo-de-exibicao-hexadecimal-hex">Modo de exibição Hexadecimal <strong><code>HEX</code></strong></h2>
+<p>Exibe os caracteres recebidos em formato de hexdump. 8 caracteres por linha com seus respectivos valores a esquerda, e os mesmos caracteres ao final com o simbolo equivalente na tabela ASCII. Muito util pra visualizar os valores reais enviados e principalmente valores sem correspondência na tabela ASCII.</p>
+<p><img alt="hex" src="hex_legendado.png" /></p>
+<h2 id="modo-de-entrada-numerica-bin">Modo de entrada numérica <strong><code>BIN</code></strong></h2>
+<p>Ao inves de usar caracteres a entrada passa a aceitar os valores de cada byte separado por espaço. Os valores podem ser em base decimal de 0 a 255 ou em hexadecimal com o prefixo 0x pra identifica como 0x80 que é 128 em decimal.</p>
+<p><img alt="hex" src="bin_legendado.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
