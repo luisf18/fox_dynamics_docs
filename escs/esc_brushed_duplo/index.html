@@ -77,7 +77,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#controle-via-uart">Controle via UART</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#com-hc-05-e-outros-modulos-bluetooth">Com HC-05 e outros modulos Bluetooth</a>
+    <li class="toctree-l2"><a class="reference internal" href="#com-hc-05-e-outros-modulos-bluetooth">Com HC-05 e outros módulos Bluetooth</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#comandos-shell">Comandos shell</a>
     </li>
@@ -89,7 +89,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ajustando-musica-de-inicio">Ajustando Musica de inicio</a>
+    <li class="toctree-l2"><a class="reference internal" href="#configurando-musica-de-inicio">Configurando música de início</a>
     </li>
     </ul>
                   </li>
@@ -151,8 +151,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="escs-brushed-duplo">ESCs brushed duplo</h1>
-<p><em>ESCs para dois motores escovados multiprotocolo, configuravel e com música.</em></p>
+                <h1 id="escs-brushed-duplos">ESCs brushed duplos</h1>
+<p><em>ESCs para dois motores escovados, multiprotocolo, configuráveis e com música.</em></p>
 <h2 id="caracteristicas-tecnicas">Características Técnicas</h2>
 <table>
 <thead>
@@ -200,11 +200,11 @@
 <li>PPM</li>
 <li>IBUS</li>
 <li>FoxWire</li>
-<li>UART (Módulos Bluetooth também)</li>
+<li>UART (incluindo módulos Bluetooth)</li>
 </ul>
 <h2 id="sinal-pwm-de-servo">Sinal PWM de servo</h2>
-<p><strong>Canal 1:</strong> Sinal de sero PWM 1<br />
-<strong>Canal 2:</strong> Sinal de sero PWM 2  </p>
+<p><strong>Canal 1:</strong> Sinal de servo PWM 1<br />
+<strong>Canal 2:</strong> Sinal de servo PWM 2  </p>
 <p><img alt="servo" src="../servo.jpeg" /></p>
 <h2 id="sinal-ibus">Sinal IBUS</h2>
 <p><strong>Canal 1:</strong> Sinal IBUS<br />
@@ -220,18 +220,18 @@
 <strong>Canal 1:</strong> RX / TX<br />
 <strong>Canal 2:</strong> TX (Telemetria ou respostas, se não quiser não precisa usar)  </p>
 <p><img alt="arduino_1fio" src="../arduino_1fio.png" /></p>
-<h2 id="com-hc-05-e-outros-modulos-bluetooth">Com HC-05 e outros modulos Bluetooth</h2>
+<h2 id="com-hc-05-e-outros-modulos-bluetooth">Com HC-05 e outros módulos Bluetooth</h2>
 <p><strong>Baudrate:</strong> 115200<br />
 <strong>Canal 1:</strong> RX / TX<br />
 <strong>Canal 2:</strong> TX (Telemetria ou respostas, se não quiser não precisa usar)  </p>
 <p><img alt="bluetooth" src="../bluetooth.jpeg" /></p>
 <h2 id="comandos-shell">Comandos shell</h2>
-<p>O modo shell permite ler e alterar parâmetro e controlar a placa via comandos de texto enviados em UART com baundrate 115200. Ideal para integrar com projetos usando Arduino, ESP32 ou Raspbarry pi.</p>
-<p><strong>Funcionamento:</strong> cada vez que um comando de movimento é recebido o ESC executa o movimento e reinicia o contador de tempo do mecanismo de failsafe. Caso ultrapasse o tempo determinado pelo parâmetro "uart_failsafe" o esc desliga os motores.</p>
-<p><strong>uart_failsafe:</strong> O parametro uart failsafe é diferente do failsafe geral usado pelos outros protocolos. ele pode ser ajustado de 0 a 2000 ms. Caso ele seja igual a zero ele é desativado, ou seja, o mecanismo de failsafe não desliga os motores se parar de receber comandos.</p>
-<p><strong>Sintaxe:</strong> Existem duas formas de usar o modo uart.<br />
-- <strong>Acionando o modo Shell</strong>: toda vez que o reiniciar a placa pra iniciar a comunicação deve acionar o modo shell enviando "FOX-SHELL" em seguida ele deve responder com "FOX-SHELL-INIT" informando assim que iniciou. Depois basta enviar qualquer comando da tabela que ele irá aceita. <br />
-- <strong>Modo Bluetooth (por prefixo)</strong>: Envie "FX-" seguido pelo comando, por exemplo: "FX-pwm -2000 2000" ou "FX-stop". Dessa forma dispenssa inicialização com "FOX-SHELL" no entanto é necessário que a opção "BLUETOOTH" esteja habilitada no campo de <strong>protocolos</strong> da configuração. Existe ainda a variação "FX0-...". Ao colocar 0 informa que a resposta ao comando deve ser enviado no mesmo fio, enquanto "FX-" ele responde no outro pino de canal.</p>
+<p>O modo shell permite ler e alterar parâmetros e controlar a placa via comandos de texto enviados por UART com baudrate de 115200. Ideal para integração com projetos usando Arduino, ESP32 ou Raspberry Pi.  </p>
+<p><strong>Funcionamento:</strong> Cada vez que um comando de movimento é recebido, o ESC executa o movimento e reinicia o contador de tempo do mecanismo de failsafe. Caso o tempo determinado pelo parâmetro "uart_failsafe" seja ultrapassado, o ESC desliga os motores.</p>
+<p><strong>uart_failsafe:</strong> O parâmetro "uart_failsafe" é diferente do failsafe geral usado pelos outros protocolos. Ele pode ser ajustado de 0 a 2000 ms. Caso seja igual a zero, o mecanismo é desativado, ou seja, os motores não serão desligados caso o ESC pare de receber comandos.</p>
+<p><strong>Sintaxe:</strong> Existem duas formas de usar o modo UART.<br />
+- <strong>Acionando o modo Shell:</strong> toda vez que reiniciar a placa, para iniciar a comunicação, envie "FOX-SHELL". O ESC deve responder com "FOX-SHELL-INIT", indicando que o modo Shell foi iniciado. Depois, basta enviar qualquer comando da tabela.
+- <strong>Modo Bluetooth (por prefixo)</strong>: envie "FX-" seguido pelo comando, por exemplo: "FX-pwm -2000 2000" ou "FX-stop". Dessa forma, dispensa-se a inicialização com "FOX-SHELL". No entanto, é necessário que a opção Bluetooth esteja habilitada no campo Protocolos da configuração. Existe ainda a variação "FX0-...". O 0 indica que a resposta ao comando deve ser enviada pelo mesmo fio, enquanto com "FX-" a resposta é enviada pelo outro pino de canal.</p>
 <table>
 <thead>
 <tr>
@@ -249,12 +249,12 @@
 <tr>
 <td>move <code>v1</code> <code>v2</code> <code>t</code></td>
 <td>não muda</td>
-<td>Movimenta os motores com as velocidade <code>v1</code> e <code>v2</code> (de -2000 a 2000) durante <code>t</code> milisegundos depois para os motores.</td>
+<td>Movimenta os motores com PWM <code>v1</code> e <code>v2</code> (de -2000 a 2000) durante <code>t</code> milissegundos depois para os motores.</td>
 </tr>
 <tr>
 <td>move_ch <code>ch1</code> <code>ch2</code> <code>t</code></td>
 <td>não muda</td>
-<td>Movimenta os motores com as velocidade usando <code>ch1</code> e <code>ch2</code> (de 1000 a 2000) como entradas de canais durante <code>t</code> milisegundos depois para os motores.</td>
+<td>Movimenta os motores usando <code>ch1</code> e <code>ch2</code> (de 1000 a 2000) como entradas de canais durante <code>t</code> milissegundos depois para os motores.</td>
 </tr>
 <tr>
 <td>off</td>
@@ -279,32 +279,32 @@
 <tr>
 <td>pwm <code>v1</code> <code>v2</code></td>
 <td>reinicia</td>
-<td>Envia o valor pwm de cada motor de -2000 a 2000</td>
+<td>Envia o valor PWMde cada motor de -2000 a 2000</td>
 </tr>
 <tr>
 <td>uart_failsafe <code>t</code></td>
 <td>configura</td>
-<td>Lê ou escreve o valor do failsafe da uart de 0 a 2000 ms</td>
+<td>Lê ou escreve o valor do failsafe da UART de 0 a 2000 ms</td>
 </tr>
 <tr>
 <td>sound <code>n</code></td>
 <td>não muda</td>
-<td>toca a musica de indice <code>n</code><BR><strong>0:</strong> Init<BR><strong>1:</strong> Connect<BR><strong>2:</strong> Disconnect<BR><strong>3:</strong> Beacon<BR><strong>4:</strong> Extra</td>
+<td>Toca a música de índice <code>n</code><BR><strong>0:</strong> Init<BR><strong>1:</strong> Connect<BR><strong>2:</strong> Disconnect<BR><strong>3:</strong> Beacon<BR><strong>4:</strong> Extra</td>
 </tr>
 <tr>
-<td>beep <code>f_Hz</code> <code>count</code> <code>periode</code> <code>motor</code></td>
+<td>beep <code>f_Hz</code> <code>count</code> <code>periodo</code> <code>motor</code></td>
 <td>não muda</td>
-<td>toca um beep de frequência (<code>f_Hz</code>) durante <code>periode</code> milisegundos depois desliga durante o mesmo intervalo e repete isso <code>count</code> vezes no <code>motor</code> (se quiser tocar os dois deixe sem esse parâmetro).<BR><strong>Exemplo:</strong> "pi... pi... pi..." seria: <em>beep 2000 3 200</em></td>
+<td>Toca um beep de frequência (<code>f_Hz</code>) durante <code>periodo</code> milissegundos depois desliga durante o mesmo intervalo e repete isso <code>count</code> vezes no <code>motor</code> (se quiser tocar os dois deixe sem esse parâmetro).<BR><strong>Exemplo:</strong> "pi... pi... pi..." seria: <em>beep 2000 3 200</em></td>
 </tr>
 <tr>
 <td>load</td>
 <td>não muda</td>
-<td>Carrega as configuração. Use caso altere elas ou reinicie o ESC.</td>
+<td>Carrega as configurações. Use após alterá-las ou reinicie o ESC.</td>
 </tr>
 <tr>
 <td>uart1 <code>texto</code></td>
 <td>não muda</td>
-<td>Imprime <code>texto</code> no pino de telemetria se ele estiver disponivel.</td>
+<td>Imprime <code>texto</code> no pino de telemetria se ele estiver disponível.</td>
 </tr>
 <tr>
 <td><a href="../../communication/Shell"><em>comandos padrão</em></a></td>
@@ -318,7 +318,7 @@
 <table>
 <thead>
 <tr>
-<th>Parametros</th>
+<th>Parâmetros</th>
 <th>Descrição</th>
 </tr>
 </thead>
@@ -333,31 +333,31 @@
 </tr>
 <tr>
 <td><strong>Basic config.</strong></td>
-<td>- <strong>Mix:</strong> mixar os canais  <br> - <strong>swap motors:</strong> troca as entradas de motores<br> - <strong>Invert M1</strong> inverte o sentido de M1<br> - <strong>Invert M2</strong> inverte o sentido de M2<br> - <strong>M1 Break on stop</strong> Aciona freio de M1<br> - <strong>M2 Break on stop</strong> Aciona freio de M2<br> - <strong>Enable uart log</strong> Aciona log no pino de canal ocioso<br> - <strong>300ms uart log</strong> Limita a 300ms o intervalor entre logs (recomendado)</td>
+<td>- <strong>Mix:</strong> mixar os canais  <br> - <strong>swap motors:</strong> Troca as entradas dos motores<br> - <strong>Invert M1</strong> inverte o sentido de M1<br> - <strong>Invert M2</strong> inverte o sentido de M2<br> - <strong>M1 Break on stop</strong> Aciona freio de M1<br> - <strong>M2 Break on stop</strong> Aciona freio de M2<br> - <strong>Enable uart log</strong> Aciona log no pino de canal ocioso<br> - <strong>300ms uart log</strong> Limita a 300 ms o intervalo entre logs (recomendado)</td>
 </tr>
 <tr>
 <td><strong>Protocolos</strong></td>
-<td>Habilita os protocolos: IBUS, PPM e "Bluetooth" (comandos uart com "FX-" ou "FX0-")</td>
+<td>Habilita os protocolos: IBUS, PPM e "Bluetooth" (comandos UART com "FX-" ou "FX0-")</td>
 </tr>
 <tr>
 <td><strong>Failsafe delay</strong></td>
-<td>Tempo de failsafe em milisegundos</td>
+<td>Tempo de failsafe em milissegundos</td>
 </tr>
 <tr>
 <td><strong>UART Failsafe</strong></td>
-<td>Tempo de failsafe em milisegundos dos comandos de movimento via uart</td>
+<td>Tempo de failsafe em milissegundos dos comandos de movimento via UART</td>
 </tr>
 <tr>
 <td><strong>Sound Volume</strong></td>
-<td>Volume do durante execução de musicas.<BR><strong>[Atenção]:</strong> Se colocar um valor muito grande o motor prode acabar girando ao tocar a musica.<BR> - <strong>Sound On</strong>: aciona sons<BR> - <strong>Automatic volume compensation</strong>: Compensação automatica do volume em função da frequencia</td>
+<td>Volume durante a execução de músicas.<BR><strong>[Atenção]:</strong> Se colocar um valor muito grande, o motor pode acabar girando ao tocar a música.<BR> - <strong>Sound On</strong>: aciona sons<BR> - <strong>Automatic volume compensation</strong>: Compensação automática do volume em função da frequência</td>
 </tr>
 <tr>
 <td><strong>Sounds config.</strong></td>
-<td>- <strong>Enable start sound</strong>: Habilita musica ao ligar o ESC<BR> - <strong>Enable connect sound</strong>: Habilita musica ao conectar<BR> - <strong>Enable disconnect sound</strong>: Habilita musica ao perder conexão<BR> - <strong>Use default sounds</strong>: Caso habilitado usa os sons padrão caso contrário usa os sons inseridos pelo usuario</td>
+<td>- <strong>Enable start sound</strong>: Habilita música ao ligar o ESC<BR> - <strong>Enable connect sound</strong>: Habilita música ao conectar<BR> - <strong>Enable disconnect sound</strong>: Habilita música ao perder conexão<BR> - <strong>Use default sounds</strong>: Caso habilitado usa os sons padrão; Caso contrário, usa os sons inseridos pelo usuário</td>
 </tr>
 <tr>
 <td><strong>Multi Channels</strong></td>
-<td>Nos casos de protocolos que forncem o valor de varios canais em um unico fio (como: IBUS, PPM ou UART) o ESC usa essa tabela para saber a função de cada canal. Caso um canal não seja usado coloque "--".<BR> - <strong>In1/rotation</strong> entrada 1 ou velocidade de rotação quando está mixado.<BR> - <strong>In2/speed</strong> entrada 2 ou velocidade linear quando está mixado.<BR> - <strong>Flip</strong> canal pra inverter o sentido de IN2: util pra caso o robô esteja de cabeça pra baixo<BR> - <strong>Max speed</strong> canal que controla a velocidade maxima dos motores<BR> - <strong>Sound</strong> Canal pra colocar um switch, quando acionado começa a tocar uma musica definida pelo usuario.<BR> - <strong>Move1</strong> Quando acionado o esc executa o movimento 1 programdo pelo usuário.<BR> - <strong>Move2</strong> Quando acionado o esc executa o movimento 2 programdo pelo usuário.</td>
+<td>Nos protocolos que fornecem os valores de vários canais em um único fio, como IBUS, PPM ou UART, o ESC utiliza esta tabela para definir a função de cada canal. Caso um canal não seja utilizado, selecione "--".<BR> - <strong>In1/rotation</strong> entrada 1 ou velocidade de rotação quando está mixado.<BR> - <strong>In2/speed</strong> entrada 2 ou velocidade linear quando está mixado.<BR> - <strong>Flip</strong> canal para inverter o sentido de IN2: útil para caso o robô esteja de cabeça para baixo<BR> - <strong>Max speed</strong> canal que controla a velocidade máxima dos motores<BR> - <strong>Sound</strong> Canal para colocar um switch, quando acionado começa a tocar uma música definida pelo usuário.<BR> - <strong>Move1</strong> Quando acionado o ESC executa o movimento 1 programado pelo usuário.<BR> - <strong>Move2</strong> Quando acionado o ESC executa o movimento 2 programado pelo usuário.</td>
 </tr>
 </tbody>
 </table>
@@ -366,26 +366,30 @@
 <table>
 <thead>
 <tr>
-<th>Parametros</th>
+<th>Parâmetros</th>
 <th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Config. Flags</strong></td>
-<td>- <strong>Bidirectional</strong> se o motor é bidirecional ou não.<BR> - <strong>Invert</strong> Inverte o sentido do motor.<BR> - <strong>Set Min. Power</strong> habilita a limitação de potência minima nos motores usando o parametro <strong>Min. Power</strong><BR> - <strong>Set Min. Power</strong> habilita a limitação de potência maxima nos motores usando o parametro <strong>Max. Power</strong><BR></td>
+<td>- <strong>Bidirectional</strong> se o motor é bidirecional ou não.<BR> - <strong>Invert</strong> Inverte o sentido do motor.<BR> - <strong>Set Min. Power</strong> habilita a limitação de potência mínima nos motores usando o parâmetro <strong>Min. Power</strong><BR> - <strong>Set Min. Power</strong> habilita a limitação de potência máxima nos motores usando o parâmetro <strong>Max. power</strong><BR></td>
 </tr>
 <tr>
 <td><strong>Min. power</strong></td>
-<td>Valor minimo de PWM que o motor irá receber. De 0 a 100%.<BR>Recomendado para remover a zona morta onde um PWM muito baixo não suficiente para mover o motor.</td>
+<td>Valor mínimo de PWM que o motor irá receber. De 0 a 100%.<BR>Recomendado para remover a zona morta onde um PWM muito baixo não é suficiente para mover o motor.</td>
+</tr>
+<tr>
+<td><strong>Max. power</strong></td>
+<td>Valor máximo de PWM que o motor irá receber. De 0 a 100%.</td>
 </tr>
 <tr>
 <td><strong>Ch min</strong></td>
-<td>Valor minimo do canal de entrada.</td>
+<td>Valor mínimo do canal de entrada.</td>
 </tr>
 <tr>
 <td><strong>Ch center</strong></td>
-<td>Valor central do canal de entrada. Nele o motor esta parado ou em freio.</td>
+<td>Valor central do canal de entrada. Nele o motor está parado ou em freio.</td>
 </tr>
 <tr>
 <td><strong>Ch max</strong></td>
@@ -393,17 +397,17 @@
 </tr>
 <tr>
 <td><strong>Ch deadband</strong></td>
-<td>Zona de tolerância em torno do centro e dos limites do canal de entrada.<BR>Por exemplo: para o motor começar a se mover, o canal de entrada precisa ser maior que <strong>Ch max</strong> + <strong>Ch deadband</strong>.</td>
+<td>Zona de tolerância em torno do centro e dos limites do canal de entrada.<BR>Por exemplo: para o motor começar a se mover, o canal de entrada precisa ser maior que <strong>Ch center</strong> + <strong>Ch deadband</strong>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="config2" src="../config_motor.png" /></p>
-<h2 id="ajustando-musica-de-inicio">Ajustando Musica de inicio</h2>
-<p>Altere ou leia a musica de inicio do ESC usando a ferramenta de <a href="https://luisf18.github.io/FoxLink_web_tool/rtttl.html">upload de musicas</a>. A ferramenta aceita melodias em formato RTTTL.</p>
+<h2 id="configurando-musica-de-inicio">Configurando música de início</h2>
+<p>Configure ou consulte a <strong>música de início do ESC</strong> usando a ferramenta de <a href="https://luisf18.github.io/FoxLink_web_tool/rtttl.html">upload de músicas</a>, que permite utilizar melodias no formato <strong>RTTTL</strong>.</p>
 <p><strong>Passo 1:</strong> Conecte a placa com a ferramenta.  </p>
 <p><img alt="music1" src="../music_connect.png" /></p>
 <p><strong>Passo 2:</strong> Clique em escanear e selecione o dispositivo.<br />
-<strong>Passo 3:</strong> Toque no computador ou no dispositivo ou salve musicas em RTTTL.  </p>
+<strong>Passo 3:</strong> Toque no computador ou no dispositivo ou salve músicas em RTTTL.  </p>
 <p><img alt="music3" src="../music_esc.png" />  </p>
               
             </div>
