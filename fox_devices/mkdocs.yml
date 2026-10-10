@@ -9,6 +9,8 @@ site_author: Luis Felipe
 repo_name: luisf18/fox_dynamics_docs
 repo_url: https://github.com/luisf18/fox_dynamics_docs
 
+edit_uri: ""
+
 
 theme:
   name: readthedocs
