@@ -1,3 +1,7 @@
+---
+description: Fox Dynamics IR-Key infrared device documentation, including technical specifications, connections, and integration with robotics projects.
+---
+
 # IrKey
 
 *Firmware V1.0*

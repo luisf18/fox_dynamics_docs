@@ -1,6 +1,21 @@
 site_name: Fox Dynamics
+
+site_description: >-
+  Official documentation for Fox Dynamics robotics,
+  embedded systems, sensors, and electronic modules.
+site_url: https://luisf18.github.io/fox_dynamics_docs/
+site_author: Luis Felipe
+
+repo_name: luisf18/fox_dynamics_docs
+repo_url: https://github.com/luisf18/fox_dynamics_docs
+
+
 theme:
   name: readthedocs
+  custom_dir: overrides
+
+plugins:
+  - search
 
 extra_css:
   - extra.css
