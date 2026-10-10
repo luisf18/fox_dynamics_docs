@@ -1,3 +1,7 @@
+---
+description: Official Fox Dynamics documentation for robotics, embedded systems, sensors, motor controllers, firmware, and communication tools.
+---
+
 # Fox Dynamics
 
 ## Sensores

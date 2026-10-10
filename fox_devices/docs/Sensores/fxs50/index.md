@@ -1,3 +1,7 @@
+---
+description: FX-S50 reflectance sensor documentation, including technical specifications, detection range, wiring, and integration with robotics projects.
+---
+
 # Sensor FX-S50
 
 *Sensor digital de obstáculos com alcance ajustavel.*

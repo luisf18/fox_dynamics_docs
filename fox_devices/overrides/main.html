@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}
+
+{% block site_meta %}
+  {{ super() }}
+
+  <meta name="google-site-verification" content="Wwrn-u-37AIoH33fHcaD17y_065qgOp3Af3VCeaixMY" />
+
+  {% if page and page.meta.description %}
+    <meta name="description" content="{{ page.meta.description | e }}">
+  {% endif %}
+{% endblock %}
